@@ -29,53 +29,53 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.panelNavigation = new System.Windows.Forms.Panel();
-            this.btnLogo = new System.Windows.Forms.Button();
+            this.SideNav = new System.Windows.Forms.Panel();
+            this.btnLogoText = new System.Windows.Forms.Button();
             this.btnmanagestudent = new System.Windows.Forms.Button();
             this.btnmanageclo = new System.Windows.Forms.Button();
             this.btnmanagerubrics = new System.Windows.Forms.Button();
             this.btnmanageassessment = new System.Windows.Forms.Button();
             this.btnmanagerubriclevel = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.UpperNav = new System.Windows.Forms.Label();
+            this.UpperPanel = new System.Windows.Forms.Panel();
+            this.UpperNavText = new System.Windows.Forms.Label();
             this.uetlogopic = new System.Windows.Forms.PictureBox();
-            this.panelNavigation.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.SideNav.SuspendLayout();
+            this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uetlogopic)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelNavigation
+            // SideNav
             // 
-            this.panelNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
-            this.panelNavigation.Controls.Add(this.btnmanagerubriclevel);
-            this.panelNavigation.Controls.Add(this.btnmanageassessment);
-            this.panelNavigation.Controls.Add(this.btnmanagerubrics);
-            this.panelNavigation.Controls.Add(this.btnmanageclo);
-            this.panelNavigation.Controls.Add(this.btnmanagestudent);
-            this.panelNavigation.Controls.Add(this.btnLogo);
-            this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelNavigation.Location = new System.Drawing.Point(0, 0);
-            this.panelNavigation.Name = "panelNavigation";
-            this.panelNavigation.Size = new System.Drawing.Size(240, 611);
-            this.panelNavigation.TabIndex = 0;
+            this.SideNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
+            this.SideNav.Controls.Add(this.btnmanagerubriclevel);
+            this.SideNav.Controls.Add(this.btnmanageassessment);
+            this.SideNav.Controls.Add(this.btnmanagerubrics);
+            this.SideNav.Controls.Add(this.btnmanageclo);
+            this.SideNav.Controls.Add(this.btnmanagestudent);
+            this.SideNav.Controls.Add(this.btnLogoText);
+            this.SideNav.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SideNav.Location = new System.Drawing.Point(0, 0);
+            this.SideNav.Name = "SideNav";
+            this.SideNav.Size = new System.Drawing.Size(240, 611);
+            this.SideNav.TabIndex = 0;
             // 
-            // btnLogo
+            // btnLogoText
             // 
-            this.btnLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(140)))), ((int)(((byte)(231)))));
-            this.btnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogo.FlatAppearance.BorderSize = 0;
-            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.btnLogoText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(140)))), ((int)(((byte)(231)))));
+            this.btnLogoText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLogoText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogoText.FlatAppearance.BorderSize = 0;
+            this.btnLogoText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogoText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogo.Location = new System.Drawing.Point(0, 0);
-            this.btnLogo.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLogo.Name = "btnLogo";
-            this.btnLogo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.btnLogo.Size = new System.Drawing.Size(240, 140);
-            this.btnLogo.TabIndex = 0;
-            this.btnLogo.Text = "Lab Management System";
-            this.btnLogo.UseVisualStyleBackColor = false;
+            this.btnLogoText.Location = new System.Drawing.Point(0, 0);
+            this.btnLogoText.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogoText.Name = "btnLogoText";
+            this.btnLogoText.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.btnLogoText.Size = new System.Drawing.Size(240, 140);
+            this.btnLogoText.TabIndex = 0;
+            this.btnLogoText.Text = "Lab Management System";
+            this.btnLogoText.UseVisualStyleBackColor = false;
             // 
             // btnmanagestudent
             // 
@@ -142,28 +142,28 @@
             this.btnmanagerubriclevel.Text = "Manage Rubric Level";
             this.btnmanagerubriclevel.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // UpperPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(198)))), ((int)(((byte)(227)))));
-            this.panel1.Controls.Add(this.UpperNav);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(240, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 70);
-            this.panel1.TabIndex = 1;
+            this.UpperPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(198)))), ((int)(((byte)(227)))));
+            this.UpperPanel.Controls.Add(this.UpperNavText);
+            this.UpperPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UpperPanel.Location = new System.Drawing.Point(240, 0);
+            this.UpperPanel.Name = "UpperPanel";
+            this.UpperPanel.Size = new System.Drawing.Size(744, 70);
+            this.UpperPanel.TabIndex = 1;
             // 
-            // UpperNav
+            // UpperNavText
             // 
-            this.UpperNav.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UpperNav.AutoSize = true;
-            this.UpperNav.Font = new System.Drawing.Font("Franklin Gothic Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpperNav.ForeColor = System.Drawing.Color.Black;
-            this.UpperNav.Location = new System.Drawing.Point(347, 20);
-            this.UpperNav.Name = "UpperNav";
-            this.UpperNav.Size = new System.Drawing.Size(88, 34);
-            this.UpperNav.TabIndex = 0;
-            this.UpperNav.Text = "Home";
-            this.UpperNav.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UpperNavText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UpperNavText.AutoSize = true;
+            this.UpperNavText.Font = new System.Drawing.Font("Franklin Gothic Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpperNavText.ForeColor = System.Drawing.Color.Black;
+            this.UpperNavText.Location = new System.Drawing.Point(347, 20);
+            this.UpperNavText.Name = "UpperNavText";
+            this.UpperNavText.Size = new System.Drawing.Size(88, 34);
+            this.UpperNavText.TabIndex = 0;
+            this.UpperNavText.Text = "Home";
+            this.UpperNavText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uetlogopic
             // 
@@ -183,8 +183,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(984, 611);
             this.Controls.Add(this.uetlogopic);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelNavigation);
+            this.Controls.Add(this.UpperPanel);
+            this.Controls.Add(this.SideNav);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -194,9 +194,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panelNavigation.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.SideNav.ResumeLayout(false);
+            this.UpperPanel.ResumeLayout(false);
+            this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uetlogopic)).EndInit();
             this.ResumeLayout(false);
 
@@ -204,15 +204,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelNavigation;
+        private System.Windows.Forms.Panel SideNav;
         private System.Windows.Forms.Button btnmanagestudent;
-        private System.Windows.Forms.Button btnLogo;
+        private System.Windows.Forms.Button btnLogoText;
         private System.Windows.Forms.Button btnmanagerubriclevel;
         private System.Windows.Forms.Button btnmanageassessment;
         private System.Windows.Forms.Button btnmanagerubrics;
         private System.Windows.Forms.Button btnmanageclo;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label UpperNav;
+        private System.Windows.Forms.Panel UpperPanel;
+        private System.Windows.Forms.Label UpperNavText;
         private System.Windows.Forms.PictureBox uetlogopic;
     }
 }
