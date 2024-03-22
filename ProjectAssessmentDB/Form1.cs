@@ -21,5 +21,12 @@ namespace ProjectAssessmentDB
         {
 
         }
+
+        private void btnmanagestudent_Click(object sender, EventArgs e)
+        {
+            Student student = new Student();
+            student.Show();
+            this.Hide();
+        }
     }
 }
