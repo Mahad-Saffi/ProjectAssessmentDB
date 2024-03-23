@@ -28,36 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnmanagerubriclevel = new System.Windows.Forms.Button();
             this.btnmanageassessment = new System.Windows.Forms.Button();
             this.btnmanagerubrics = new System.Windows.Forms.Button();
             this.SideNav = new System.Windows.Forms.Panel();
+            this.btnStudentResult = new System.Windows.Forms.Button();
             this.btnmanageclo = new System.Windows.Forms.Button();
             this.btnmanagestudent = new System.Windows.Forms.Button();
             this.btnLogoText = new System.Windows.Forms.Button();
             this.UpperPanel = new System.Windows.Forms.Panel();
             this.UpperNavText = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registrationNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBMidProjectDataSet = new ProjectAssessmentDB.DBMidProjectDataSet();
             this.textFirstname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textLastname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textRegNo = new System.Windows.Forms.TextBox();
+            this.textContact = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
             this.labelregno = new System.Windows.Forms.Label();
             this.labelcontact = new System.Windows.Forms.Label();
             this.labelemail = new System.Windows.Forms.Label();
             this.labelstatus = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboStatus = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
-            this.btnStudentResult = new System.Windows.Forms.Button();
+            this.studentTableAdapter = new ProjectAssessmentDB.DBMidProjectDataSetTableAdapters.StudentTableAdapter();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMidProjectDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnmanagerubriclevel
@@ -118,6 +131,20 @@
             this.SideNav.Size = new System.Drawing.Size(240, 721);
             this.SideNav.TabIndex = 2;
             this.SideNav.Paint += new System.Windows.Forms.PaintEventHandler(this.SideNav_Paint);
+            // 
+            // btnStudentResult
+            // 
+            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentResult.FlatAppearance.BorderSize = 0;
+            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
+            this.btnStudentResult.Name = "btnStudentResult";
+            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
+            this.btnStudentResult.TabIndex = 7;
+            this.btnStudentResult.Text = "Manage Student Result";
+            this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // btnmanageclo
             // 
@@ -192,11 +219,76 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.contactDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.registrationNumberDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.studentBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(258, 377);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(705, 276);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // contactDataGridViewTextBoxColumn
+            // 
+            this.contactDataGridViewTextBoxColumn.DataPropertyName = "Contact";
+            this.contactDataGridViewTextBoxColumn.HeaderText = "Contact";
+            this.contactDataGridViewTextBoxColumn.Name = "contactDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // registrationNumberDataGridViewTextBoxColumn
+            // 
+            this.registrationNumberDataGridViewTextBoxColumn.DataPropertyName = "RegistrationNumber";
+            this.registrationNumberDataGridViewTextBoxColumn.HeaderText = "RegistrationNumber";
+            this.registrationNumberDataGridViewTextBoxColumn.Name = "registrationNumberDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "Student";
+            this.studentBindingSource.DataSource = this.dBMidProjectDataSet;
+            // 
+            // dBMidProjectDataSet
+            // 
+            this.dBMidProjectDataSet.DataSetName = "DBMidProjectDataSet";
+            this.dBMidProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textFirstname
             // 
@@ -236,30 +328,30 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Last Name";
             // 
-            // textBox1
+            // textRegNo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBox1.Location = new System.Drawing.Point(416, 183);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 24);
-            this.textBox1.TabIndex = 8;
+            this.textRegNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.textRegNo.Location = new System.Drawing.Point(416, 183);
+            this.textRegNo.Name = "textRegNo";
+            this.textRegNo.Size = new System.Drawing.Size(126, 24);
+            this.textRegNo.TabIndex = 8;
             // 
-            // textBox2
+            // textContact
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBox2.Location = new System.Drawing.Point(775, 182);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 24);
-            this.textBox2.TabIndex = 9;
+            this.textContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.textContact.Location = new System.Drawing.Point(775, 182);
+            this.textContact.Name = "textContact";
+            this.textContact.Size = new System.Drawing.Size(139, 24);
+            this.textContact.TabIndex = 9;
             // 
-            // textBox3
+            // textEmail
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBox3.Location = new System.Drawing.Point(416, 252);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 24);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.textEmail.Location = new System.Drawing.Point(416, 252);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(126, 24);
+            this.textEmail.TabIndex = 10;
+            this.textEmail.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // labelregno
             // 
@@ -304,17 +396,17 @@
             this.labelstatus.TabIndex = 14;
             this.labelstatus.Text = "Status";
             // 
-            // comboBox1
+            // comboStatus
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboStatus.FormattingEnabled = true;
+            this.comboStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboBox1.Location = new System.Drawing.Point(775, 250);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 15;
+            this.comboStatus.Location = new System.Drawing.Point(775, 250);
+            this.comboStatus.Name = "comboStatus";
+            this.comboStatus.Size = new System.Drawing.Size(121, 28);
+            this.comboStatus.TabIndex = 15;
             // 
             // button1
             // 
@@ -340,6 +432,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Add Student";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // btnupdate
             // 
@@ -363,19 +456,9 @@
             this.btndelete.UseVisualStyleBackColor = true;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
-            // btnStudentResult
+            // studentTableAdapter
             // 
-            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStudentResult.FlatAppearance.BorderSize = 0;
-            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
-            this.btnStudentResult.Name = "btnStudentResult";
-            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
-            this.btnStudentResult.TabIndex = 7;
-            this.btnStudentResult.Text = "Manage Student Result";
-            this.btnStudentResult.UseVisualStyleBackColor = false;
-            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
+            this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // Student
             // 
@@ -386,14 +469,14 @@
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboStatus);
             this.Controls.Add(this.labelstatus);
             this.Controls.Add(this.labelemail);
             this.Controls.Add(this.labelcontact);
             this.Controls.Add(this.labelregno);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textEmail);
+            this.Controls.Add(this.textContact);
+            this.Controls.Add(this.textRegNo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textLastname);
             this.Controls.Add(this.label1);
@@ -410,6 +493,8 @@
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMidProjectDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,18 +516,28 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textLastname;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textRegNo;
+        private System.Windows.Forms.TextBox textContact;
+        private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label labelregno;
         private System.Windows.Forms.Label labelcontact;
         private System.Windows.Forms.Label labelemail;
         private System.Windows.Forms.Label labelstatus;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboStatus;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnStudentResult;
+        private DBMidProjectDataSet dBMidProjectDataSet;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private DBMidProjectDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn registrationNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }

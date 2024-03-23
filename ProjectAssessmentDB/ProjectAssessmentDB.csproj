@@ -58,6 +58,11 @@
     <Compile Include="CLO.Designer.cs">
       <DependentUpon>CLO.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBMidProjectDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMidProjectDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +129,17 @@
     <EmbeddedResource Include="StudentResult.resx">
       <DependentUpon>StudentResult.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DBMidProjectDataSet.xsc">
+      <DependentUpon>DBMidProjectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBMidProjectDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMidProjectDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMidProjectDataSet.xss">
+      <DependentUpon>DBMidProjectDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
