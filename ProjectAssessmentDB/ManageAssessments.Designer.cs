@@ -82,6 +82,7 @@
             this.btnmanagerubriclevel.TabIndex = 5;
             this.btnmanagerubriclevel.Text = "Manage Rubric Level";
             this.btnmanagerubriclevel.UseVisualStyleBackColor = false;
+            this.btnmanagerubriclevel.Click += new System.EventHandler(this.btnmanagerubriclevel_Click);
             // 
             // btnmanageassessment
             // 
@@ -95,6 +96,7 @@
             this.btnmanageassessment.TabIndex = 4;
             this.btnmanageassessment.Text = "Manage Assessment";
             this.btnmanageassessment.UseVisualStyleBackColor = false;
+            this.btnmanageassessment.Click += new System.EventHandler(this.btnmanageassessment_Click);
             // 
             // btnmanagerubrics
             // 
@@ -108,6 +110,7 @@
             this.btnmanagerubrics.TabIndex = 3;
             this.btnmanagerubrics.Text = "Manage Rubrics";
             this.btnmanagerubrics.UseVisualStyleBackColor = false;
+            this.btnmanagerubrics.Click += new System.EventHandler(this.btnmanagerubrics_Click);
             // 
             // btnmanageclo
             // 
@@ -121,6 +124,7 @@
             this.btnmanageclo.TabIndex = 2;
             this.btnmanageclo.Text = "Manage CLO";
             this.btnmanageclo.UseVisualStyleBackColor = false;
+            this.btnmanageclo.Click += new System.EventHandler(this.btnmanageclo_Click);
             // 
             // btnmanagestudent
             // 
@@ -134,6 +138,7 @@
             this.btnmanagestudent.TabIndex = 1;
             this.btnmanagestudent.Text = "Manage Student";
             this.btnmanagestudent.UseVisualStyleBackColor = false;
+            this.btnmanagestudent.Click += new System.EventHandler(this.btnmanagestudent_Click);
             // 
             // btnLogoText
             // 
@@ -152,6 +157,7 @@
             this.btnLogoText.TabIndex = 0;
             this.btnLogoText.Text = "Lab Management System";
             this.btnLogoText.UseVisualStyleBackColor = false;
+            this.btnLogoText.Click += new System.EventHandler(this.btnLogoText_Click);
             // 
             // UpperPanel
             // 
@@ -241,7 +247,7 @@
             // btnupdateassessment
             // 
             this.btnupdateassessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnupdateassessment.Location = new System.Drawing.Point(387, 261);
+            this.btnupdateassessment.Location = new System.Drawing.Point(386, 658);
             this.btnupdateassessment.Name = "btnupdateassessment";
             this.btnupdateassessment.Size = new System.Drawing.Size(98, 37);
             this.btnupdateassessment.TabIndex = 11;
@@ -251,7 +257,7 @@
             // btndeleteassessment
             // 
             this.btndeleteassessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btndeleteassessment.Location = new System.Drawing.Point(750, 261);
+            this.btndeleteassessment.Location = new System.Drawing.Point(749, 658);
             this.btndeleteassessment.Name = "btndeleteassessment";
             this.btndeleteassessment.Size = new System.Drawing.Size(98, 37);
             this.btndeleteassessment.TabIndex = 12;
@@ -261,7 +267,7 @@
             // btnAddassessment
             // 
             this.btnAddassessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnAddassessment.Location = new System.Drawing.Point(822, 656);
+            this.btnAddassessment.Location = new System.Drawing.Point(779, 260);
             this.btnAddassessment.Name = "btnAddassessment";
             this.btnAddassessment.Size = new System.Drawing.Size(98, 37);
             this.btnAddassessment.TabIndex = 13;
@@ -271,7 +277,7 @@
             // btnaddComponent
             // 
             this.btnaddComponent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnaddComponent.Location = new System.Drawing.Point(343, 656);
+            this.btnaddComponent.Location = new System.Drawing.Point(370, 260);
             this.btnaddComponent.Name = "btnaddComponent";
             this.btnaddComponent.Size = new System.Drawing.Size(142, 37);
             this.btnaddComponent.TabIndex = 14;
@@ -291,6 +297,7 @@
             this.btnStudentResult.TabIndex = 7;
             this.btnStudentResult.Text = "Manage Student Result";
             this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // ManageAssessments
             // 
@@ -310,6 +317,7 @@
             this.Controls.Add(this.labelAssesmentTitle);
             this.Controls.Add(this.SideNav);
             this.Controls.Add(this.UpperPanel);
+            this.MaximizeBox = false;
             this.Name = "ManageAssessments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageAssessments";

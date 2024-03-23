@@ -321,7 +321,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(671, 669);
+            this.button1.Location = new System.Drawing.Point(679, 320);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 40);
             this.button1.TabIndex = 16;
@@ -334,7 +334,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(387, 668);
+            this.button2.Location = new System.Drawing.Point(395, 319);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 40);
             this.button2.TabIndex = 17;
@@ -344,22 +344,24 @@
             // btnupdate
             // 
             this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnupdate.Location = new System.Drawing.Point(424, 320);
+            this.btnupdate.Location = new System.Drawing.Point(416, 667);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(100, 40);
             this.btnupdate.TabIndex = 18;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btndelete
             // 
             this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btndelete.Location = new System.Drawing.Point(718, 320);
+            this.btndelete.Location = new System.Drawing.Point(710, 667);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(100, 40);
             this.btndelete.TabIndex = 19;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnStudentResult
             // 
@@ -373,6 +375,7 @@
             this.btnStudentResult.TabIndex = 7;
             this.btnStudentResult.Text = "Manage Student Result";
             this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // Student
             // 
@@ -398,6 +401,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SideNav);
             this.Controls.Add(this.UpperPanel);
+            this.MaximizeBox = false;
             this.Name = "Student";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";

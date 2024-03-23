@@ -81,6 +81,7 @@
             this.btnmanagerubriclevel.TabIndex = 5;
             this.btnmanagerubriclevel.Text = "Manage Rubric Level";
             this.btnmanagerubriclevel.UseVisualStyleBackColor = false;
+            this.btnmanagerubriclevel.Click += new System.EventHandler(this.btnmanagerubriclevel_Click);
             // 
             // btnmanageassessment
             // 
@@ -94,6 +95,7 @@
             this.btnmanageassessment.TabIndex = 4;
             this.btnmanageassessment.Text = "Manage Assessment";
             this.btnmanageassessment.UseVisualStyleBackColor = false;
+            this.btnmanageassessment.Click += new System.EventHandler(this.btnmanageassessment_Click);
             // 
             // btnmanagerubrics
             // 
@@ -107,6 +109,7 @@
             this.btnmanagerubrics.TabIndex = 3;
             this.btnmanagerubrics.Text = "Manage Rubrics";
             this.btnmanagerubrics.UseVisualStyleBackColor = false;
+            this.btnmanagerubrics.Click += new System.EventHandler(this.btnmanagerubrics_Click);
             // 
             // btnmanageclo
             // 
@@ -120,6 +123,7 @@
             this.btnmanageclo.TabIndex = 2;
             this.btnmanageclo.Text = "Manage CLO";
             this.btnmanageclo.UseVisualStyleBackColor = false;
+            this.btnmanageclo.Click += new System.EventHandler(this.btnmanageclo_Click);
             // 
             // btnmanagestudent
             // 
@@ -133,6 +137,7 @@
             this.btnmanagestudent.TabIndex = 1;
             this.btnmanagestudent.Text = "Manage Student";
             this.btnmanagestudent.UseVisualStyleBackColor = false;
+            this.btnmanagestudent.Click += new System.EventHandler(this.btnmanagestudent_Click);
             // 
             // btnLogoText
             // 
@@ -151,6 +156,7 @@
             this.btnLogoText.TabIndex = 0;
             this.btnLogoText.Text = "Lab Management System";
             this.btnLogoText.UseVisualStyleBackColor = false;
+            this.btnLogoText.Click += new System.EventHandler(this.btnLogoText_Click);
             // 
             // UpperPanel
             // 
@@ -280,6 +286,7 @@
             this.btnStudentResult.TabIndex = 6;
             this.btnStudentResult.Text = "Manage Student Result";
             this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // RubricLevel
             // 
@@ -298,6 +305,7 @@
             this.Controls.Add(this.labelRubricId);
             this.Controls.Add(this.SideNav);
             this.Controls.Add(this.UpperPanel);
+            this.MaximizeBox = false;
             this.Name = "RubricLevel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RubricLevel";
