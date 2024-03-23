@@ -63,5 +63,47 @@ namespace ProjectAssessmentDB
         {
 
         }
+
+        private void Student_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SideNav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnmanagerubriclevel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnmanageassessment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnmanagerubrics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnmanageclo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpperPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StudentAttendance studentAttendance = new StudentAttendance();
+            studentAttendance.Show();
+            this.Hide();
+        }
     }
 }

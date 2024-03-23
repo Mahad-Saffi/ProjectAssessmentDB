@@ -96,15 +96,30 @@
     <Compile Include="StudentResult.Designer.cs">
       <DependentUpon>StudentResult.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AssessmentComponent.resx">
+      <DependentUpon>AssessmentComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLO.resx">
+      <DependentUpon>CLO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAssessments.resx">
+      <DependentUpon>ManageAssessments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RubricLevel.resx">
+      <DependentUpon>RubricLevel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentAttendance.resx">
+      <DependentUpon>StudentAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentResult.resx">
       <DependentUpon>StudentResult.cs</DependentUpon>

@@ -16,5 +16,17 @@ namespace ProjectAssessmentDB
         {
             InitializeComponent();
         }
+
+        private void labelAssesmentTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnaddComponent_Click(object sender, EventArgs e)
+        {
+            AssessmentComponent assessmentComponent = new AssessmentComponent();
+            assessmentComponent.Show();
+            this.Hide();
+        }
     }
 }

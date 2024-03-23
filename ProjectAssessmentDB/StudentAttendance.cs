@@ -16,5 +16,10 @@ namespace ProjectAssessmentDB
         {
             InitializeComponent();
         }
+
+        private void StudentAttendance_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

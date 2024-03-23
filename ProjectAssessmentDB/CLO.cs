@@ -16,5 +16,10 @@ namespace ProjectAssessmentDB
         {
             InitializeComponent();
         }
+
+        private void labelcloname_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

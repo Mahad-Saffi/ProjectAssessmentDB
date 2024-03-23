@@ -39,6 +39,7 @@
             this.UpperPanel = new System.Windows.Forms.Panel();
             this.UpperNavText = new System.Windows.Forms.Label();
             this.uetlogopic = new System.Windows.Forms.PictureBox();
+            this.btnStudentResult = new System.Windows.Forms.Button();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uetlogopic)).BeginInit();
@@ -47,6 +48,7 @@
             // SideNav
             // 
             this.SideNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
+            this.SideNav.Controls.Add(this.btnStudentResult);
             this.SideNav.Controls.Add(this.btnmanagerubriclevel);
             this.SideNav.Controls.Add(this.btnmanageassessment);
             this.SideNav.Controls.Add(this.btnmanagerubrics);
@@ -58,6 +60,7 @@
             this.SideNav.Name = "SideNav";
             this.SideNav.Size = new System.Drawing.Size(240, 611);
             this.SideNav.TabIndex = 0;
+            this.SideNav.Paint += new System.Windows.Forms.PaintEventHandler(this.SideNav_Paint);
             // 
             // btnmanagerubriclevel
             // 
@@ -71,6 +74,7 @@
             this.btnmanagerubriclevel.TabIndex = 5;
             this.btnmanagerubriclevel.Text = "Manage Rubric Level";
             this.btnmanagerubriclevel.UseVisualStyleBackColor = false;
+            this.btnmanagerubriclevel.Click += new System.EventHandler(this.btnmanagerubriclevel_Click);
             // 
             // btnmanageassessment
             // 
@@ -84,6 +88,7 @@
             this.btnmanageassessment.TabIndex = 4;
             this.btnmanageassessment.Text = "Manage Assessment";
             this.btnmanageassessment.UseVisualStyleBackColor = false;
+            this.btnmanageassessment.Click += new System.EventHandler(this.btnmanageassessment_Click);
             // 
             // btnmanagerubrics
             // 
@@ -97,6 +102,7 @@
             this.btnmanagerubrics.TabIndex = 3;
             this.btnmanagerubrics.Text = "Manage Rubrics";
             this.btnmanagerubrics.UseVisualStyleBackColor = false;
+            this.btnmanagerubrics.Click += new System.EventHandler(this.btnmanagerubrics_Click);
             // 
             // btnmanageclo
             // 
@@ -110,6 +116,7 @@
             this.btnmanageclo.TabIndex = 2;
             this.btnmanageclo.Text = "Manage CLO";
             this.btnmanageclo.UseVisualStyleBackColor = false;
+            this.btnmanageclo.Click += new System.EventHandler(this.btnmanageclo_Click);
             // 
             // btnmanagestudent
             // 
@@ -142,6 +149,7 @@
             this.btnLogoText.TabIndex = 0;
             this.btnLogoText.Text = "Lab Management System";
             this.btnLogoText.UseVisualStyleBackColor = false;
+            this.btnLogoText.Click += new System.EventHandler(this.btnLogoText_Click);
             // 
             // UpperPanel
             // 
@@ -152,6 +160,7 @@
             this.UpperPanel.Name = "UpperPanel";
             this.UpperPanel.Size = new System.Drawing.Size(744, 70);
             this.UpperPanel.TabIndex = 1;
+            this.UpperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.UpperPanel_Paint);
             // 
             // UpperNavText
             // 
@@ -165,6 +174,7 @@
             this.UpperNavText.TabIndex = 0;
             this.UpperNavText.Text = "Home";
             this.UpperNavText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UpperNavText.Click += new System.EventHandler(this.UpperNavText_Click);
             // 
             // uetlogopic
             // 
@@ -176,6 +186,20 @@
             this.uetlogopic.Size = new System.Drawing.Size(430, 451);
             this.uetlogopic.TabIndex = 2;
             this.uetlogopic.TabStop = false;
+            // 
+            // btnStudentResult
+            // 
+            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentResult.FlatAppearance.BorderSize = 0;
+            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
+            this.btnStudentResult.Name = "btnStudentResult";
+            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
+            this.btnStudentResult.TabIndex = 7;
+            this.btnStudentResult.Text = "Manage Student Result";
+            this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // Home
             // 
@@ -215,6 +239,7 @@
         private System.Windows.Forms.Panel UpperPanel;
         private System.Windows.Forms.Label UpperNavText;
         private System.Windows.Forms.PictureBox uetlogopic;
+        private System.Windows.Forms.Button btnStudentResult;
     }
 }
 

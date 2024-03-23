@@ -54,6 +54,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
+            this.btnStudentResult = new System.Windows.Forms.Button();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,6 +72,7 @@
             this.btnmanagerubriclevel.TabIndex = 5;
             this.btnmanagerubriclevel.Text = "Manage Rubric Level";
             this.btnmanagerubriclevel.UseVisualStyleBackColor = false;
+            this.btnmanagerubriclevel.Click += new System.EventHandler(this.btnmanagerubriclevel_Click);
             // 
             // btnmanageassessment
             // 
@@ -84,6 +86,7 @@
             this.btnmanageassessment.TabIndex = 4;
             this.btnmanageassessment.Text = "Manage Assessment";
             this.btnmanageassessment.UseVisualStyleBackColor = false;
+            this.btnmanageassessment.Click += new System.EventHandler(this.btnmanageassessment_Click);
             // 
             // btnmanagerubrics
             // 
@@ -97,10 +100,12 @@
             this.btnmanagerubrics.TabIndex = 3;
             this.btnmanagerubrics.Text = "Manage Rubrics";
             this.btnmanagerubrics.UseVisualStyleBackColor = false;
+            this.btnmanagerubrics.Click += new System.EventHandler(this.btnmanagerubrics_Click);
             // 
             // SideNav
             // 
             this.SideNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
+            this.SideNav.Controls.Add(this.btnStudentResult);
             this.SideNav.Controls.Add(this.btnmanagerubriclevel);
             this.SideNav.Controls.Add(this.btnmanageassessment);
             this.SideNav.Controls.Add(this.btnmanagerubrics);
@@ -112,6 +117,7 @@
             this.SideNav.Name = "SideNav";
             this.SideNav.Size = new System.Drawing.Size(240, 721);
             this.SideNav.TabIndex = 2;
+            this.SideNav.Paint += new System.Windows.Forms.PaintEventHandler(this.SideNav_Paint);
             // 
             // btnmanageclo
             // 
@@ -125,6 +131,7 @@
             this.btnmanageclo.TabIndex = 2;
             this.btnmanageclo.Text = "Manage CLO";
             this.btnmanageclo.UseVisualStyleBackColor = false;
+            this.btnmanageclo.Click += new System.EventHandler(this.btnmanageclo_Click);
             // 
             // btnmanagestudent
             // 
@@ -167,6 +174,7 @@
             this.UpperPanel.Name = "UpperPanel";
             this.UpperPanel.Size = new System.Drawing.Size(744, 70);
             this.UpperPanel.TabIndex = 3;
+            this.UpperPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.UpperPanel_Paint);
             // 
             // UpperNavText
             // 
@@ -302,7 +310,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Active",
-            "Not Active"});
+            "Inactive"});
             this.comboBox1.Location = new System.Drawing.Point(775, 250);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
@@ -319,6 +327,7 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Mark Attendance";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -352,6 +361,19 @@
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
             // 
+            // btnStudentResult
+            // 
+            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentResult.FlatAppearance.BorderSize = 0;
+            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
+            this.btnStudentResult.Name = "btnStudentResult";
+            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
+            this.btnStudentResult.TabIndex = 7;
+            this.btnStudentResult.Text = "Manage Student Result";
+            this.btnStudentResult.UseVisualStyleBackColor = false;
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +401,7 @@
             this.Name = "Student";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
+            this.Load += new System.EventHandler(this.Student_Load);
             this.SideNav.ResumeLayout(false);
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
@@ -416,5 +439,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button btnStudentResult;
     }
 }
