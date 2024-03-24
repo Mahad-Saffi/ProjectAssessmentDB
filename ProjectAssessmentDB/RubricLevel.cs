@@ -98,6 +98,8 @@ namespace ProjectAssessmentDB
         }
         private void RubricLevel_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectBDataSet1.Rubric' table. You can move, or remove it, as needed.
+            this.rubricTableAdapter.Fill(this.projectBDataSet1.Rubric);
             RefreshGrid();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -165,7 +167,98 @@ namespace ProjectAssessmentDB
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        private void txtRubricDetail_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnRubricLevelDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        string query = "DELETE FROM RubricLevel WHERE RubricId = @RubricId AND Details = @Details AND MeasurementLevel = @MeasurementLevel";
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.Add(new SqlParameter("@RubricId", comboRubricId.Text));
+                            command.Parameters.Add(new SqlParameter("@Details", txtRubricDetail.Text));
+                            command.Parameters.Add(new SqlParameter("@MeasurementLevel", comboRubricLevel.Text));
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Record Deleted Successfully");
+                                RefreshGrid();
+                                comboRubricId.Text = "";
+                                txtRubricDetail.Text = "";
+                                comboRubricLevel.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error deleting record");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting data: " + ex.Message);
+            }
+        }
+
+        private void btnRubricLevelUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnString.connectionString))
+                {
+                    connection.Open();
+                    int temp = 0;
+
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        string query = "UPDATE RubricLevel SET Details = @Details, MeasurementLevel = @MeasurementLevel WHERE RubricId = @RubricId";
+
+                        SqlCommand command = new SqlCommand(query, connection);
+                        if (comboRubricLevel.Text == "Exceptional")
+                        {
+                            temp = 4;
+                        }
+                        else if (comboRubricLevel.Text == "Good")
+                        {
+                            temp = 3;
+                        }
+                        else if (comboRubricLevel.Text == "Fair")
+                        {
+                            temp = 2;
+                        }
+                        else if (comboRubricLevel.Text == "Unsatisfactory")
+                        {
+                            temp = 1;
+                        }
+                        command.Parameters.AddWithValue("@Details", txtRubricDetail.Text);
+                        command.Parameters.AddWithValue("@MeasurementLevel", temp);
+                        command.Parameters.AddWithValue("@RubricId", comboRubricId.SelectedValue);
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                        MessageBox.Show("Data Updated Successfully");
+                        RubricLevel_Load(sender, e);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating data: " + ex.Message);
+            }
+        }
     }
 }
 
