@@ -68,5 +68,10 @@ namespace ProjectAssessmentDB
             studentResult.Show();
             this.Hide();
         }
+
+        private void txtcloname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

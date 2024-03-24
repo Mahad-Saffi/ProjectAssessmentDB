@@ -78,7 +78,7 @@
             this.btnmanagerubriclevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnmanagerubriclevel.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnmanagerubriclevel.FlatAppearance.BorderSize = 0;
-            this.btnmanagerubriclevel.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanagerubriclevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanagerubriclevel.Location = new System.Drawing.Point(0, 360);
             this.btnmanagerubriclevel.Name = "btnmanagerubriclevel";
             this.btnmanagerubriclevel.Size = new System.Drawing.Size(240, 55);
@@ -92,7 +92,7 @@
             this.btnmanageassessment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnmanageassessment.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnmanageassessment.FlatAppearance.BorderSize = 0;
-            this.btnmanageassessment.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanageassessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanageassessment.Location = new System.Drawing.Point(0, 305);
             this.btnmanageassessment.Name = "btnmanageassessment";
             this.btnmanageassessment.Size = new System.Drawing.Size(240, 55);
@@ -106,7 +106,7 @@
             this.btnmanagerubrics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnmanagerubrics.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnmanagerubrics.FlatAppearance.BorderSize = 0;
-            this.btnmanagerubrics.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanagerubrics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanagerubrics.Location = new System.Drawing.Point(0, 250);
             this.btnmanagerubrics.Name = "btnmanagerubrics";
             this.btnmanagerubrics.Size = new System.Drawing.Size(240, 55);
@@ -128,7 +128,7 @@
             this.SideNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideNav.Location = new System.Drawing.Point(0, 0);
             this.SideNav.Name = "SideNav";
-            this.SideNav.Size = new System.Drawing.Size(240, 721);
+            this.SideNav.Size = new System.Drawing.Size(240, 701);
             this.SideNav.TabIndex = 2;
             this.SideNav.Paint += new System.Windows.Forms.PaintEventHandler(this.SideNav_Paint);
             // 
@@ -137,7 +137,7 @@
             this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStudentResult.FlatAppearance.BorderSize = 0;
-            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
             this.btnStudentResult.Name = "btnStudentResult";
             this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
@@ -151,7 +151,7 @@
             this.btnmanageclo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnmanageclo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnmanageclo.FlatAppearance.BorderSize = 0;
-            this.btnmanageclo.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanageclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanageclo.Location = new System.Drawing.Point(0, 195);
             this.btnmanageclo.Name = "btnmanageclo";
             this.btnmanageclo.Size = new System.Drawing.Size(240, 55);
@@ -165,7 +165,7 @@
             this.btnmanagestudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnmanagestudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnmanagestudent.FlatAppearance.BorderSize = 0;
-            this.btnmanagestudent.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanagestudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanagestudent.Location = new System.Drawing.Point(0, 140);
             this.btnmanagestudent.Name = "btnmanagestudent";
             this.btnmanagestudent.Size = new System.Drawing.Size(240, 55);
@@ -230,9 +230,9 @@
             this.registrationNumberDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.studentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(258, 377);
+            this.dataGridView1.Location = new System.Drawing.Point(258, 305);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(705, 276);
+            this.dataGridView1.Size = new System.Drawing.Size(705, 384);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -293,7 +293,7 @@
             // textFirstname
             // 
             this.textFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textFirstname.Location = new System.Drawing.Point(416, 110);
+            this.textFirstname.Location = new System.Drawing.Point(442, 103);
             this.textFirstname.Name = "textFirstname";
             this.textFirstname.Size = new System.Drawing.Size(126, 24);
             this.textFirstname.TabIndex = 4;
@@ -303,7 +303,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(269, 108);
+            this.label1.Location = new System.Drawing.Point(295, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 22);
             this.label1.TabIndex = 5;
@@ -312,7 +312,7 @@
             // textLastname
             // 
             this.textLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textLastname.Location = new System.Drawing.Point(775, 108);
+            this.textLastname.Location = new System.Drawing.Point(760, 103);
             this.textLastname.Name = "textLastname";
             this.textLastname.Size = new System.Drawing.Size(139, 24);
             this.textLastname.TabIndex = 6;
@@ -322,7 +322,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label2.Location = new System.Drawing.Point(641, 108);
+            this.label2.Location = new System.Drawing.Point(643, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 22);
             this.label2.TabIndex = 7;
@@ -331,7 +331,7 @@
             // textRegNo
             // 
             this.textRegNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textRegNo.Location = new System.Drawing.Point(416, 183);
+            this.textRegNo.Location = new System.Drawing.Point(442, 140);
             this.textRegNo.Name = "textRegNo";
             this.textRegNo.Size = new System.Drawing.Size(126, 24);
             this.textRegNo.TabIndex = 8;
@@ -339,7 +339,7 @@
             // textContact
             // 
             this.textContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textContact.Location = new System.Drawing.Point(775, 182);
+            this.textContact.Location = new System.Drawing.Point(760, 140);
             this.textContact.Name = "textContact";
             this.textContact.Size = new System.Drawing.Size(139, 24);
             this.textContact.TabIndex = 9;
@@ -347,7 +347,7 @@
             // textEmail
             // 
             this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textEmail.Location = new System.Drawing.Point(416, 252);
+            this.textEmail.Location = new System.Drawing.Point(442, 184);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(126, 24);
             this.textEmail.TabIndex = 10;
@@ -357,7 +357,7 @@
             // 
             this.labelregno.AutoSize = true;
             this.labelregno.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.labelregno.Location = new System.Drawing.Point(269, 181);
+            this.labelregno.Location = new System.Drawing.Point(295, 142);
             this.labelregno.Name = "labelregno";
             this.labelregno.Size = new System.Drawing.Size(139, 22);
             this.labelregno.TabIndex = 11;
@@ -368,7 +368,7 @@
             // 
             this.labelcontact.AutoSize = true;
             this.labelcontact.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.labelcontact.Location = new System.Drawing.Point(641, 181);
+            this.labelcontact.Location = new System.Drawing.Point(643, 142);
             this.labelcontact.Name = "labelcontact";
             this.labelcontact.Size = new System.Drawing.Size(72, 22);
             this.labelcontact.TabIndex = 12;
@@ -379,7 +379,7 @@
             // 
             this.labelemail.AutoSize = true;
             this.labelemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.labelemail.Location = new System.Drawing.Point(269, 252);
+            this.labelemail.Location = new System.Drawing.Point(295, 186);
             this.labelemail.Name = "labelemail";
             this.labelemail.Size = new System.Drawing.Size(54, 22);
             this.labelemail.TabIndex = 13;
@@ -390,7 +390,7 @@
             // 
             this.labelstatus.AutoSize = true;
             this.labelstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.labelstatus.Location = new System.Drawing.Point(641, 252);
+            this.labelstatus.Location = new System.Drawing.Point(643, 186);
             this.labelstatus.Name = "labelstatus";
             this.labelstatus.Size = new System.Drawing.Size(61, 22);
             this.labelstatus.TabIndex = 14;
@@ -403,9 +403,9 @@
             this.comboStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.comboStatus.Location = new System.Drawing.Point(775, 250);
+            this.comboStatus.Location = new System.Drawing.Point(760, 186);
             this.comboStatus.Name = "comboStatus";
-            this.comboStatus.Size = new System.Drawing.Size(121, 28);
+            this.comboStatus.Size = new System.Drawing.Size(139, 28);
             this.comboStatus.TabIndex = 15;
             // 
             // button1
@@ -413,7 +413,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(679, 320);
+            this.button1.Location = new System.Drawing.Point(816, 250);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 40);
             this.button1.TabIndex = 16;
@@ -426,7 +426,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(395, 319);
+            this.button2.Location = new System.Drawing.Point(258, 250);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 40);
             this.button2.TabIndex = 17;
@@ -437,22 +437,22 @@
             // btnupdate
             // 
             this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btnupdate.Location = new System.Drawing.Point(416, 667);
+            this.btnupdate.Location = new System.Drawing.Point(442, 250);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(100, 40);
+            this.btnupdate.Size = new System.Drawing.Size(147, 40);
             this.btnupdate.TabIndex = 18;
-            this.btnupdate.Text = "Update";
+            this.btnupdate.Text = "Update Student";
             this.btnupdate.UseVisualStyleBackColor = true;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btndelete
             // 
             this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btndelete.Location = new System.Drawing.Point(710, 667);
+            this.btndelete.Location = new System.Drawing.Point(635, 250);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(100, 40);
+            this.btndelete.Size = new System.Drawing.Size(147, 40);
             this.btndelete.TabIndex = 19;
-            this.btndelete.Text = "Delete";
+            this.btndelete.Text = "Delete Student";
             this.btndelete.UseVisualStyleBackColor = true;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
@@ -464,7 +464,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 721);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(984, 701);
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.button2);

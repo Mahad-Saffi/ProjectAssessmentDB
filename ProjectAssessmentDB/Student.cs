@@ -13,7 +13,7 @@ namespace ProjectAssessmentDB
 {
     public partial class Student : Form
     {
-        string connectionString = "Data Source=DESKTOP-2S9LEDE;Initial Catalog=DBMidProject;Integrated Security=True;";
+        string connectionString = "Server=DESKTOP-VCJSKBS\\SQLEXPRESS;;Database=ProjectB;Trusted_Connection=True;";
         public Student()
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace ProjectAssessmentDB
 
         private void UpperNavText_Click(object sender, EventArgs e)
         {
+
 
         }
 
@@ -63,7 +64,7 @@ namespace ProjectAssessmentDB
             }
             else if (statusText.ToLower() == "inactive")
             {
-                return 0;
+                return 2;
             }
             else
             {
@@ -76,7 +77,8 @@ namespace ProjectAssessmentDB
         private void Student_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dBMidProjectDataSet.Student' table. You can move, or remove it, as needed.
-            this.studentTableAdapter.Fill(this.dBMidProjectDataSet.Student);
+            //   this.studentTableAdapter.Fill(this.dBMidProjectDataSet.Student);
+            LoadDataIntoGrid();
 
         }
 
