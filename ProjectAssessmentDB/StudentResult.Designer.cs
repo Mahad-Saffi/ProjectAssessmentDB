@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SideNav = new System.Windows.Forms.Panel();
             this.btnStudentResult = new System.Windows.Forms.Button();
             this.btnmanagerubriclevel = new System.Windows.Forms.Button();
@@ -54,9 +55,19 @@
             this.comboRubricLevel = new System.Windows.Forms.ComboBox();
             this.comboRubricLevelId = new System.Windows.Forms.ComboBox();
             this.dateTimePickerStudentResult = new System.Windows.Forms.DateTimePicker();
+            this.projectBDataSet2 = new ProjectAssessmentDB.ProjectBDataSet2();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableAdapter = new ProjectAssessmentDB.ProjectBDataSet2TableAdapters.StudentTableAdapter();
+            this.projectBDataSet = new ProjectAssessmentDB.ProjectBDataSet();
+            this.assessmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assessmentTableAdapter = new ProjectAssessmentDB.ProjectBDataSetTableAdapters.AssessmentTableAdapter();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SideNav
@@ -290,6 +301,8 @@
             // 
             // comboStudent
             // 
+            this.comboStudent.DataSource = this.studentBindingSource;
+            this.comboStudent.DisplayMember = "FirstName";
             this.comboStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboStudent.FormattingEnabled = true;
             this.comboStudent.Location = new System.Drawing.Point(435, 118);
@@ -299,6 +312,8 @@
             // 
             // comboAssessment
             // 
+            this.comboAssessment.DataSource = this.assessmentBindingSource;
+            this.comboAssessment.DisplayMember = "Title";
             this.comboAssessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboAssessment.FormattingEnabled = true;
             this.comboAssessment.Location = new System.Drawing.Point(826, 118);
@@ -351,6 +366,34 @@
             this.dateTimePickerStudentResult.Size = new System.Drawing.Size(227, 23);
             this.dateTimePickerStudentResult.TabIndex = 20;
             // 
+            // projectBDataSet2
+            // 
+            this.projectBDataSet2.DataSetName = "ProjectBDataSet2";
+            this.projectBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "Student";
+            this.studentBindingSource.DataSource = this.projectBDataSet2;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // projectBDataSet
+            // 
+            this.projectBDataSet.DataSetName = "ProjectBDataSet";
+            this.projectBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // assessmentBindingSource
+            // 
+            this.assessmentBindingSource.DataMember = "Assessment";
+            this.assessmentBindingSource.DataSource = this.projectBDataSet;
+            // 
+            // assessmentTableAdapter
+            // 
+            this.assessmentTableAdapter.ClearBeforeFill = true;
+            // 
             // StudentResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,10 +421,15 @@
             this.Name = "StudentResult";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentResult";
+            this.Load += new System.EventHandler(this.StudentResult_Load);
             this.SideNav.ResumeLayout(false);
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,5 +463,11 @@
         private System.Windows.Forms.ComboBox comboRubricLevel;
         private System.Windows.Forms.ComboBox comboRubricLevelId;
         private System.Windows.Forms.DateTimePicker dateTimePickerStudentResult;
+        private ProjectBDataSet2 projectBDataSet2;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private ProjectBDataSet2TableAdapters.StudentTableAdapter studentTableAdapter;
+        private ProjectBDataSet projectBDataSet;
+        private System.Windows.Forms.BindingSource assessmentBindingSource;
+        private ProjectBDataSetTableAdapters.AssessmentTableAdapter assessmentTableAdapter;
     }
 }
