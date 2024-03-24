@@ -63,5 +63,14 @@ namespace ProjectAssessmentDB
         {
 
         }
+
+        private void StudentResult_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'projectBDataSet.Assessment' table. You can move, or remove it, as needed.
+            this.assessmentTableAdapter.Fill(this.projectBDataSet.Assessment);
+            // TODO: This line of code loads data into the 'projectBDataSet2.Student' table. You can move, or remove it, as needed.
+            this.studentTableAdapter.Fill(this.projectBDataSet2.Student);
+
+        }
     }
 }

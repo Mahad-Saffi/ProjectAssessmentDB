@@ -38,13 +38,19 @@
             this.btnmanagerubrics = new System.Windows.Forms.Button();
             this.btnmanageclo = new System.Windows.Forms.Button();
             this.btnmanagestudent = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelCLOId = new System.Windows.Forms.Label();
+            this.labelRubricDetail = new System.Windows.Forms.Label();
+            this.labelRubricId = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboCLOId = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonAddRubric = new System.Windows.Forms.Button();
+            this.btnUpdateRubric = new System.Windows.Forms.Button();
+            this.btnDeleteRubric = new System.Windows.Forms.Button();
             this.UpperPanel.SuspendLayout();
             this.SideNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // UpperPanel
@@ -182,62 +188,117 @@
             this.btnmanagestudent.Text = "Manage Student";
             this.btnmanagestudent.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // labelCLOId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label1.Location = new System.Drawing.Point(294, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 22);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.labelCLOId.AutoSize = true;
+            this.labelCLOId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelCLOId.Location = new System.Drawing.Point(275, 118);
+            this.labelCLOId.Name = "labelCLOId";
+            this.labelCLOId.Size = new System.Drawing.Size(66, 22);
+            this.labelCLOId.TabIndex = 4;
+            this.labelCLOId.Text = "CLO Id";
             // 
-            // label2
+            // labelRubricDetail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label2.Location = new System.Drawing.Point(294, 173);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 22);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.labelRubricDetail.AutoSize = true;
+            this.labelRubricDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelRubricDetail.Location = new System.Drawing.Point(275, 173);
+            this.labelRubricDetail.Name = "labelRubricDetail";
+            this.labelRubricDetail.Size = new System.Drawing.Size(113, 22);
+            this.labelRubricDetail.TabIndex = 5;
+            this.labelRubricDetail.Text = "Rubric Detail";
             // 
-            // label3
+            // labelRubricId
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label3.Location = new System.Drawing.Point(294, 228);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 22);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(385, 170);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 7;
+            this.labelRubricId.AutoSize = true;
+            this.labelRubricId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelRubricId.Location = new System.Drawing.Point(275, 228);
+            this.labelRubricId.Name = "labelRubricId";
+            this.labelRubricId.Size = new System.Drawing.Size(81, 22);
+            this.labelRubricId.TabIndex = 6;
+            this.labelRubricId.Text = "Rubric Id";
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.Location = new System.Drawing.Point(385, 224);
+            this.textBox2.Location = new System.Drawing.Point(396, 224);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
+            this.textBox2.Size = new System.Drawing.Size(121, 26);
             this.textBox2.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox1.Location = new System.Drawing.Point(396, 169);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 26);
+            this.textBox1.TabIndex = 7;
+            // 
+            // comboCLOId
+            // 
+            this.comboCLOId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboCLOId.FormattingEnabled = true;
+            this.comboCLOId.Location = new System.Drawing.Point(394, 115);
+            this.comboCLOId.Name = "comboCLOId";
+            this.comboCLOId.Size = new System.Drawing.Size(121, 28);
+            this.comboCLOId.TabIndex = 9;
+            this.comboCLOId.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(544, 115);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(417, 233);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // buttonAddRubric
+            // 
+            this.buttonAddRubric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonAddRubric.Location = new System.Drawing.Point(419, 293);
+            this.buttonAddRubric.Name = "buttonAddRubric";
+            this.buttonAddRubric.Size = new System.Drawing.Size(96, 39);
+            this.buttonAddRubric.TabIndex = 11;
+            this.buttonAddRubric.Text = "Add";
+            this.buttonAddRubric.UseVisualStyleBackColor = true;
+            this.buttonAddRubric.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnUpdateRubric
+            // 
+            this.btnUpdateRubric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnUpdateRubric.Location = new System.Drawing.Point(593, 394);
+            this.btnUpdateRubric.Name = "btnUpdateRubric";
+            this.btnUpdateRubric.Size = new System.Drawing.Size(96, 39);
+            this.btnUpdateRubric.TabIndex = 12;
+            this.btnUpdateRubric.Text = "Update";
+            this.btnUpdateRubric.UseVisualStyleBackColor = true;
+            this.btnUpdateRubric.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnDeleteRubric
+            // 
+            this.btnDeleteRubric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDeleteRubric.Location = new System.Drawing.Point(795, 394);
+            this.btnDeleteRubric.Name = "btnDeleteRubric";
+            this.btnDeleteRubric.Size = new System.Drawing.Size(96, 39);
+            this.btnDeleteRubric.TabIndex = 13;
+            this.btnDeleteRubric.Text = "Delete";
+            this.btnDeleteRubric.UseVisualStyleBackColor = true;
             // 
             // Rubric
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 721);
+            this.Controls.Add(this.btnDeleteRubric);
+            this.Controls.Add(this.btnUpdateRubric);
+            this.Controls.Add(this.buttonAddRubric);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.comboCLOId);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelRubricId);
+            this.Controls.Add(this.labelRubricDetail);
+            this.Controls.Add(this.labelCLOId);
             this.Controls.Add(this.UpperPanel);
             this.Controls.Add(this.SideNav);
             this.Name = "Rubric";
@@ -246,6 +307,7 @@
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             this.SideNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,10 +325,15 @@
         private System.Windows.Forms.Button btnmanagerubrics;
         private System.Windows.Forms.Button btnmanageclo;
         private System.Windows.Forms.Button btnmanagestudent;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelCLOId;
+        private System.Windows.Forms.Label labelRubricDetail;
+        private System.Windows.Forms.Label labelRubricId;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboCLOId;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonAddRubric;
+        private System.Windows.Forms.Button btnUpdateRubric;
+        private System.Windows.Forms.Button btnDeleteRubric;
     }
 }
