@@ -52,11 +52,13 @@
             this.projectBDataSet3 = new ProjectAssessmentDB.ProjectBDataSet3();
             this.cloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cloTableAdapter = new ProjectAssessmentDB.ProjectBDataSet3TableAdapters.CloTableAdapter();
+            this.cloBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.UpperPanel.SuspendLayout();
             this.SideNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // UpperPanel
@@ -231,6 +233,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 26);
             this.textBox2.TabIndex = 8;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -239,10 +242,11 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 26);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboCLOId
             // 
-            this.comboCLOId.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cloBindingSource, "Id", true));
+            this.comboCLOId.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cloBindingSource1, "Id", true));
             this.comboCLOId.DataSource = this.cloBindingSource;
             this.comboCLOId.DisplayMember = "Id";
             this.comboCLOId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -308,6 +312,11 @@
             // 
             this.cloTableAdapter.ClearBeforeFill = true;
             // 
+            // cloBindingSource1
+            // 
+            this.cloBindingSource1.DataMember = "Clo";
+            this.cloBindingSource1.DataSource = this.projectBDataSet3;
+            // 
             // Rubric
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +344,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +375,6 @@
         private ProjectBDataSet3 projectBDataSet3;
         private System.Windows.Forms.BindingSource cloBindingSource;
         private ProjectBDataSet3TableAdapters.CloTableAdapter cloTableAdapter;
+        private System.Windows.Forms.BindingSource cloBindingSource1;
     }
 }
