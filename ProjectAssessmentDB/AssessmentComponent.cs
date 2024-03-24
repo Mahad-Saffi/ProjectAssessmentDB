@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ProjectAssessmentDB
 {
     public partial class AssessmentComponent : Form
     {
+        string connectionString = ConnString.connectionString;
         public AssessmentComponent()
         {
             InitializeComponent();
@@ -45,8 +47,8 @@ namespace ProjectAssessmentDB
 
         private void btnmanagerubrics_Click(object sender, EventArgs e)
         {
-            ManageAssessments assessments = new ManageAssessments();
-            assessments.Show();
+            Rubric rubric = new Rubric();
+            rubric.Show();
             this.Hide();
         }
 
@@ -73,11 +75,53 @@ namespace ProjectAssessmentDB
 
         private void AssessmentComponent_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'projectBDataSet1.Rubric' table. You can move, or remove it, as needed.
-            this.rubricTableAdapter.Fill(this.projectBDataSet1.Rubric);
-            // TODO: This line of code loads data into the 'projectBDataSet.Assessment' table. You can move, or remove it, as needed.
-            this.assessmentTableAdapter.Fill(this.projectBDataSet.Assessment);
+            // TODO: This line of code loads data into the 'projectBDataSet3.AssessmentComponent' table. You can move, or remove it, as needed.
+            this.assessmentComponentTableAdapter.Fill(this.projectBDataSet3.AssessmentComponent);
+            RefreshGrid();
+        }
+        private void RefreshGrid()
+        {
+            dataGridView1.DataSource = null;
+            LoadDataIntoGrid();
+        }
+        private void LoadDataIntoGrid()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    string query = "SELECT * FROM AssessmentComponent";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+            }
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                textBox1.Text = row.Cells[1].Value.ToString();
+                comboRubric.Text = row.Cells[2].Value.ToString();
+                textBox2.Text = row.Cells[3].Value.ToString();
+                comboAssessment.Text = row.Cells[6].Value.ToString();
+
+            }
         }
     }
 }
