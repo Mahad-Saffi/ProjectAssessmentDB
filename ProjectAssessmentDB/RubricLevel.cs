@@ -98,6 +98,8 @@ namespace ProjectAssessmentDB
         }
         private void RubricLevel_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectBDataSet7.Rubric' table. You can move, or remove it, as needed.
+            this.rubricTableAdapter.Fill(this.projectBDataSet7.Rubric);
             RefreshGrid();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

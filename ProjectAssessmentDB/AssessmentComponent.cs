@@ -197,6 +197,45 @@ namespace ProjectAssessmentDB
                 MessageBox.Show(ex.Message);
             }*/
         }
-        
+
+        private void btnUpdateAssesComp_Click(object sender, EventArgs e)
+        {/*
+            try
+            {
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+
+                if (connection.State == ConnectionState.Open)
+                {
+                    string query = "UPDATE Student SET FirstName = @FirstName, LastName = @LastName, RegistrationNumber = @RegistrationNumber, Contact = @Contact, Email = @Email, Status = @Status WHERE Id = (SELECT Id FROM Student WHERE RegistrationNumber = @RegistrationNumber)";
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    command.Parameters.Add(new SqlParameter("@FirstName", textFirstname.Text));
+                    command.Parameters.Add(new SqlParameter("@LastName", textLastname.Text));
+                    command.Parameters.Add(new SqlParameter("@RegistrationNumber", textRegNo.Text));
+                    command.Parameters.Add(new SqlParameter("@Contact", textContact.Text));
+                    command.Parameters.Add(new SqlParameter("@Email", textEmail.Text));
+                    command.Parameters.Add(new SqlParameter("@Status", MapStatusToInteger(comboStatus.Text)));
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Student Updated Successfully");
+                    RefreshGrid();
+                    textFirstname.Text = "";
+                    textLastname.Text = "";
+                    textRegNo.Text = "";
+                    textContact.Text = "";
+                    textEmail.Text = "";
+                    comboStatus.Text = "";
+                    connection.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error in connection");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+        }
     }
 }

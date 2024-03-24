@@ -373,6 +373,7 @@
             this.btnUpdateAssesComp.TabIndex = 14;
             this.btnUpdateAssesComp.Text = "Update";
             this.btnUpdateAssesComp.UseVisualStyleBackColor = true;
+            this.btnUpdateAssesComp.Click += new System.EventHandler(this.btnUpdateAssesComp_Click);
             // 
             // btnDeleteAssesComp
             // 
