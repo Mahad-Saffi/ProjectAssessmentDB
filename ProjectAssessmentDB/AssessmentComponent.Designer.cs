@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnmanagerubrics = new System.Windows.Forms.Button();
             this.SideNav = new System.Windows.Forms.Panel();
+            this.btnStudentResult = new System.Windows.Forms.Button();
             this.btnmanagerubriclevel = new System.Windows.Forms.Button();
             this.btnmanageassessment = new System.Windows.Forms.Button();
             this.btnmanageclo = new System.Windows.Forms.Button();
@@ -49,10 +51,21 @@
             this.btnAddAssesComp = new System.Windows.Forms.Button();
             this.btnUpdateAssesComp = new System.Windows.Forms.Button();
             this.btnDeleteAssesComp = new System.Windows.Forms.Button();
-            this.btnStudentResult = new System.Windows.Forms.Button();
+            this.projectBDataSet = new ProjectAssessmentDB.ProjectBDataSet();
+            this.assessmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assessmentTableAdapter = new ProjectAssessmentDB.ProjectBDataSetTableAdapters.AssessmentTableAdapter();
+            this.projectBDataSet1 = new ProjectAssessmentDB.ProjectBDataSet1();
+            this.rubricBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rubricTableAdapter = new ProjectAssessmentDB.ProjectBDataSet1TableAdapters.RubricTableAdapter();
+            this.rubricBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnmanagerubrics
@@ -84,6 +97,20 @@
             this.SideNav.Name = "SideNav";
             this.SideNav.Size = new System.Drawing.Size(240, 721);
             this.SideNav.TabIndex = 2;
+            // 
+            // btnStudentResult
+            // 
+            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentResult.FlatAppearance.BorderSize = 0;
+            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
+            this.btnStudentResult.Name = "btnStudentResult";
+            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
+            this.btnStudentResult.TabIndex = 7;
+            this.btnStudentResult.Text = "Manage Student Result";
+            this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // btnmanagerubriclevel
             // 
@@ -241,6 +268,8 @@
             // 
             // comboAssessment
             // 
+            this.comboAssessment.DataSource = this.assessmentBindingSource;
+            this.comboAssessment.DisplayMember = "Title";
             this.comboAssessment.FormattingEnabled = true;
             this.comboAssessment.Location = new System.Drawing.Point(466, 197);
             this.comboAssessment.Name = "comboAssessment";
@@ -249,6 +278,8 @@
             // 
             // comboRubric
             // 
+            this.comboRubric.DataSource = this.rubricBindingSource1;
+            this.comboRubric.DisplayMember = "Details";
             this.comboRubric.FormattingEnabled = true;
             this.comboRubric.Location = new System.Drawing.Point(827, 196);
             this.comboRubric.Name = "comboRubric";
@@ -293,19 +324,38 @@
             this.btnDeleteAssesComp.Text = "Delete";
             this.btnDeleteAssesComp.UseVisualStyleBackColor = true;
             // 
-            // btnStudentResult
+            // projectBDataSet
             // 
-            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStudentResult.FlatAppearance.BorderSize = 0;
-            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
-            this.btnStudentResult.Name = "btnStudentResult";
-            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
-            this.btnStudentResult.TabIndex = 7;
-            this.btnStudentResult.Text = "Manage Student Result";
-            this.btnStudentResult.UseVisualStyleBackColor = false;
-            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
+            this.projectBDataSet.DataSetName = "ProjectBDataSet";
+            this.projectBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // assessmentBindingSource
+            // 
+            this.assessmentBindingSource.DataMember = "Assessment";
+            this.assessmentBindingSource.DataSource = this.projectBDataSet;
+            // 
+            // assessmentTableAdapter
+            // 
+            this.assessmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // projectBDataSet1
+            // 
+            this.projectBDataSet1.DataSetName = "ProjectBDataSet1";
+            this.projectBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rubricBindingSource
+            // 
+            this.rubricBindingSource.DataMember = "Rubric";
+            this.rubricBindingSource.DataSource = this.projectBDataSet1;
+            // 
+            // rubricTableAdapter
+            // 
+            this.rubricTableAdapter.ClearBeforeFill = true;
+            // 
+            // rubricBindingSource1
+            // 
+            this.rubricBindingSource1.DataMember = "Rubric";
+            this.rubricBindingSource1.DataSource = this.projectBDataSet1;
             // 
             // AssessmentComponent
             // 
@@ -330,10 +380,16 @@
             this.Name = "AssessmentComponent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AssessmentComponent";
+            this.Load += new System.EventHandler(this.AssessmentComponent_Load);
             this.SideNav.ResumeLayout(false);
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +419,12 @@
         private System.Windows.Forms.Button btnUpdateAssesComp;
         private System.Windows.Forms.Button btnDeleteAssesComp;
         private System.Windows.Forms.Button btnStudentResult;
+        private ProjectBDataSet projectBDataSet;
+        private System.Windows.Forms.BindingSource assessmentBindingSource;
+        private ProjectBDataSetTableAdapters.AssessmentTableAdapter assessmentTableAdapter;
+        private ProjectBDataSet1 projectBDataSet1;
+        private System.Windows.Forms.BindingSource rubricBindingSource;
+        private ProjectBDataSet1TableAdapters.RubricTableAdapter rubricTableAdapter;
+        private System.Windows.Forms.BindingSource rubricBindingSource1;
     }
 }

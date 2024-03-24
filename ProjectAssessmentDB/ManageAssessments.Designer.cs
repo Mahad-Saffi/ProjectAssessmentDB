@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SideNav = new System.Windows.Forms.Panel();
+            this.btnStudentResult = new System.Windows.Forms.Button();
             this.btnmanagerubriclevel = new System.Windows.Forms.Button();
             this.btnmanageassessment = new System.Windows.Forms.Button();
             this.btnmanagerubrics = new System.Windows.Forms.Button();
@@ -48,10 +50,19 @@
             this.btndeleteassessment = new System.Windows.Forms.Button();
             this.btnAddassessment = new System.Windows.Forms.Button();
             this.btnaddComponent = new System.Windows.Forms.Button();
-            this.btnStudentResult = new System.Windows.Forms.Button();
+            this.projectBDataSet = new ProjectAssessmentDB.ProjectBDataSet();
+            this.assessmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assessmentTableAdapter = new ProjectAssessmentDB.ProjectBDataSetTableAdapters.AssessmentTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalMarksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalWeightageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SideNav
@@ -69,6 +80,20 @@
             this.SideNav.Name = "SideNav";
             this.SideNav.Size = new System.Drawing.Size(240, 721);
             this.SideNav.TabIndex = 2;
+            // 
+            // btnStudentResult
+            // 
+            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentResult.FlatAppearance.BorderSize = 0;
+            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
+            this.btnStudentResult.Name = "btnStudentResult";
+            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
+            this.btnStudentResult.TabIndex = 7;
+            this.btnStudentResult.Text = "Manage Student Result";
+            this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // btnmanagerubriclevel
             // 
@@ -238,11 +263,21 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.dateCreatedDataGridViewTextBoxColumn,
+            this.totalMarksDataGridViewTextBoxColumn,
+            this.totalWeightageDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.assessmentBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(282, 315);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(666, 322);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnupdateassessment
             // 
@@ -253,6 +288,7 @@
             this.btnupdateassessment.TabIndex = 11;
             this.btnupdateassessment.Text = "Update";
             this.btnupdateassessment.UseVisualStyleBackColor = true;
+            this.btnupdateassessment.Click += new System.EventHandler(this.btnupdateassessment_Click);
             // 
             // btndeleteassessment
             // 
@@ -263,6 +299,7 @@
             this.btndeleteassessment.TabIndex = 12;
             this.btndeleteassessment.Text = "Delete";
             this.btndeleteassessment.UseVisualStyleBackColor = true;
+            this.btndeleteassessment.Click += new System.EventHandler(this.btndeleteassessment_Click);
             // 
             // btnAddassessment
             // 
@@ -273,6 +310,7 @@
             this.btnAddassessment.TabIndex = 13;
             this.btnAddassessment.Text = "Add";
             this.btnAddassessment.UseVisualStyleBackColor = true;
+            this.btnAddassessment.Click += new System.EventHandler(this.btnAddassessment_Click);
             // 
             // btnaddComponent
             // 
@@ -285,19 +323,54 @@
             this.btnaddComponent.UseVisualStyleBackColor = true;
             this.btnaddComponent.Click += new System.EventHandler(this.btnaddComponent_Click);
             // 
-            // btnStudentResult
+            // projectBDataSet
             // 
-            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStudentResult.FlatAppearance.BorderSize = 0;
-            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
-            this.btnStudentResult.Name = "btnStudentResult";
-            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
-            this.btnStudentResult.TabIndex = 7;
-            this.btnStudentResult.Text = "Manage Student Result";
-            this.btnStudentResult.UseVisualStyleBackColor = false;
-            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
+            this.projectBDataSet.DataSetName = "ProjectBDataSet";
+            this.projectBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // assessmentBindingSource
+            // 
+            this.assessmentBindingSource.DataMember = "Assessment";
+            this.assessmentBindingSource.DataSource = this.projectBDataSet;
+            // 
+            // assessmentTableAdapter
+            // 
+            this.assessmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            this.dateCreatedDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // totalMarksDataGridViewTextBoxColumn
+            // 
+            this.totalMarksDataGridViewTextBoxColumn.DataPropertyName = "TotalMarks";
+            this.totalMarksDataGridViewTextBoxColumn.HeaderText = "TotalMarks";
+            this.totalMarksDataGridViewTextBoxColumn.Name = "totalMarksDataGridViewTextBoxColumn";
+            this.totalMarksDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // totalWeightageDataGridViewTextBoxColumn
+            // 
+            this.totalWeightageDataGridViewTextBoxColumn.DataPropertyName = "TotalWeightage";
+            this.totalWeightageDataGridViewTextBoxColumn.HeaderText = "TotalWeightage";
+            this.totalWeightageDataGridViewTextBoxColumn.Name = "totalWeightageDataGridViewTextBoxColumn";
+            this.totalWeightageDataGridViewTextBoxColumn.Width = 130;
             // 
             // ManageAssessments
             // 
@@ -321,10 +394,13 @@
             this.Name = "ManageAssessments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageAssessments";
+            this.Load += new System.EventHandler(this.ManageAssessments_Load);
             this.SideNav.ResumeLayout(false);
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +429,13 @@
         private System.Windows.Forms.Button btnAddassessment;
         private System.Windows.Forms.Button btnaddComponent;
         private System.Windows.Forms.Button btnStudentResult;
+        private ProjectBDataSet projectBDataSet;
+        private System.Windows.Forms.BindingSource assessmentBindingSource;
+        private ProjectBDataSetTableAdapters.AssessmentTableAdapter assessmentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalMarksDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalWeightageDataGridViewTextBoxColumn;
     }
 }

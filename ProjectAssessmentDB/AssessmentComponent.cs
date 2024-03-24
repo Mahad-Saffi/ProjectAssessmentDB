@@ -70,5 +70,14 @@ namespace ProjectAssessmentDB
             studentResult.Show();
             this.Hide();
         }
+
+        private void AssessmentComponent_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'projectBDataSet1.Rubric' table. You can move, or remove it, as needed.
+            this.rubricTableAdapter.Fill(this.projectBDataSet1.Rubric);
+            // TODO: This line of code loads data into the 'projectBDataSet.Assessment' table. You can move, or remove it, as needed.
+            this.assessmentTableAdapter.Fill(this.projectBDataSet.Assessment);
+
+        }
     }
 }

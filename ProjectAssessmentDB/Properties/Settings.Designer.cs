@@ -33,5 +33,16 @@ namespace ProjectAssessmentDB.Properties {
                 return ((string)(this["DBMidProjectConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-2S9LEDE;Initial Catalog=ProjectB;Integrated Security=True;Enc" +
+            "rypt=True;TrustServerCertificate=True")]
+        public string ProjectBConnectionString {
+            get {
+                return ((string)(this["ProjectBConnectionString"]));
+            }
+        }
     }
 }

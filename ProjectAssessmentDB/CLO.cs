@@ -14,7 +14,8 @@ namespace ProjectAssessmentDB
     public partial class CLO : Form
     {
 
-        string connectionString = "Server=DESKTOP-VCJSKBS\\SQLEXPRESS;;Database=ProjectB;Trusted_Connection=True;";
+        string connectionString = "Data Source=DESKTOP-VCJSKBS;Initial Catalog=ProjectB;Integrated Security=True;";
+            //"Server=DESKTOP-VCJSKBS\\SQLEXPRESS;;Database=ProjectB;Trusted_Connection=True;";
 
         public CLO()
         {
@@ -199,12 +200,7 @@ namespace ProjectAssessmentDB
                         string query = "DELETE FROM Student WHERE Id = (SELECT Id FROM Student WHERE FirstName = @FirstName AND LastName = @LastName AND Email = @Email AND Contact = @Contact AND RegistrationNumber = @RegistrationNumber)";
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
-                            command.Parameters.Add(new SqlParameter("@FirstName", textFirstname.Text));
-                            command.Parameters.Add(new SqlParameter("@LastName", textLastname.Text));
-                            command.Parameters.Add(new SqlParameter("@RegistrationNumber", textRegNo.Text));
-                            command.Parameters.Add(new SqlParameter("@Contact", textContact.Text));
-                            command.Parameters.Add(new SqlParameter("@Email", textEmail.Text));
-
+                            command.Parameters.Add(new SqlParameter("@FirstName", txtcloname.Text));
                             int rowsAffected = command.ExecuteNonQuery();
 
                             if (rowsAffected > 0)

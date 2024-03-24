@@ -13,7 +13,7 @@ namespace ProjectAssessmentDB
 {
     public partial class Student : Form
     {
-        string connectionString = "Server=DESKTOP-VCJSKBS\\SQLEXPRESS;;Database=ProjectB;Trusted_Connection=True;";
+        string connectionString = ConnString.connectionString;
         public Student()
         {
             InitializeComponent();
