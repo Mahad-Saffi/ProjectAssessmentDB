@@ -56,8 +56,8 @@ namespace ProjectAssessmentDB
 
         private void btnmanagerubrics_Click(object sender, EventArgs e)
         {
-            ManageAssessments assessments = new ManageAssessments();
-            assessments.Show();
+            Rubric rubric = new Rubric();
+            rubric.Show();
             this.Hide();
         }
 
