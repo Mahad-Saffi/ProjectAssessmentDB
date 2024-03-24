@@ -20,17 +20,17 @@ namespace ProjectAssessmentDB {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ProjectBDataSet4")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ProjectBDataSet5")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ProjectBDataSet4 : global::System.Data.DataSet {
+    public partial class ProjectBDataSet5 : global::System.Data.DataSet {
         
-        private CloDataTable tableClo;
+        private RubricDataTable tableRubric;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ProjectBDataSet4() {
+        public ProjectBDataSet5() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ProjectAssessmentDB {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected ProjectBDataSet4(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ProjectBDataSet5(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,6 +54,8 @@ namespace ProjectAssessmentDB {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["Rubric"] != null)) {
+                    base.Tables.Add(new RubricDataTable(ds.Tables["Rubric"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -77,7 +79,9 @@ namespace ProjectAssessmentDB {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public RubricDataTable Rubric {
             get {
+                return this.tableRubric;
             }
         }
         
@@ -123,7 +127,7 @@ namespace ProjectAssessmentDB {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ProjectBDataSet4 cln = ((ProjectBDataSet4)(base.Clone()));
+            ProjectBDataSet5 cln = ((ProjectBDataSet5)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -148,6 +152,8 @@ namespace ProjectAssessmentDB {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["Rubric"] != null)) {
+                    base.Tables.Add(new RubricDataTable(ds.Tables["Rubric"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -182,7 +188,10 @@ namespace ProjectAssessmentDB {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tableRubric = ((RubricDataTable)(base.Tables["Rubric"]));
             if ((initTable == true)) {
+                if ((this.tableRubric != null)) {
+                    this.tableRubric.InitVars();
                 }
             }
         }
@@ -190,15 +199,18 @@ namespace ProjectAssessmentDB {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ProjectBDataSet4";
+            this.DataSetName = "ProjectBDataSet5";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ProjectBDataSet4.xsd";
+            this.Namespace = "http://tempuri.org/ProjectBDataSet5.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableRubric = new RubricDataTable();
+            base.Tables.Add(this.tableRubric);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeRubric() {
             return false;
         }
         
@@ -213,7 +225,7 @@ namespace ProjectAssessmentDB {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ProjectBDataSet4 ds = new ProjectBDataSet4();
+            ProjectBDataSet5 ds = new ProjectBDataSet5();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -258,25 +270,25 @@ namespace ProjectAssessmentDB {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void RubricRowChangeEventHandler(object sender, RubricRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class RubricDataTable : global::System.Data.TypedTableBase<RubricRow> {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnTitle;
+            private global::System.Data.DataColumn columnDetails;
             
-            private global::System.Data.DataColumn columnDateCreated;
-            
-            private global::System.Data.DataColumn columnTotalMarks;
-            
-            private global::System.Data.DataColumn columnTotalWeightage;
+            private global::System.Data.DataColumn columnCloId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public RubricDataTable() {
+                this.TableName = "Rubric";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -284,6 +296,7 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal RubricDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -300,6 +313,7 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected RubricDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -314,33 +328,17 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TitleColumn {
+            public global::System.Data.DataColumn DetailsColumn {
                 get {
-                    return this.columnTitle;
+                    return this.columnDetails;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DateCreatedColumn {
+            public global::System.Data.DataColumn CloIdColumn {
                 get {
-                    return this.columnDateCreated;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TotalMarksColumn {
-                get {
-                    return this.columnTotalMarks;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TotalWeightageColumn {
-                get {
-                    return this.columnTotalWeightage;
+                    return this.columnCloId;
                 }
             }
             
@@ -355,36 +353,54 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public RubricRow this[int index] {
                 get {
+                    return ((RubricRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event RubricRowChangeEventHandler RubricRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event RubricRowChangeEventHandler RubricRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event RubricRowChangeEventHandler RubricRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event RubricRowChangeEventHandler RubricRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddRubricRow(RubricRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public RubricRow AddRubricRow(int Id, string Details, int CloId) {
+                RubricRow rowRubricRow = ((RubricRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Id,
+                        Details,
+                        CloId};
+                rowRubricRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRubricRow);
+                return rowRubricRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public RubricRow FindById(int Id) {
+                return ((RubricRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
+                RubricDataTable cln = ((RubricDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -392,16 +408,15 @@ namespace ProjectAssessmentDB {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
+                return new RubricDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnTitle = base.Columns["Title"];
-                this.columnDateCreated = base.Columns["DateCreated"];
-                this.columnTotalMarks = base.Columns["TotalMarks"];
-                this.columnTotalWeightage = base.Columns["TotalWeightage"];
+                this.columnDetails = base.Columns["Details"];
+                this.columnCloId = base.Columns["CloId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -409,47 +424,43 @@ namespace ProjectAssessmentDB {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTitle);
-                this.columnDateCreated = new global::System.Data.DataColumn("DateCreated", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDateCreated);
-                this.columnTotalMarks = new global::System.Data.DataColumn("TotalMarks", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalMarks);
-                this.columnTotalWeightage = new global::System.Data.DataColumn("TotalWeightage", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalWeightage);
+                this.columnDetails = new global::System.Data.DataColumn("Details", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDetails);
+                this.columnCloId = new global::System.Data.DataColumn("CloId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCloId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
-                this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
-                this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnTitle.AllowDBNull = false;
-                this.columnTitle.MaxLength = 50;
-                this.columnDateCreated.AllowDBNull = false;
-                this.columnTotalMarks.AllowDBNull = false;
-                this.columnTotalWeightage.AllowDBNull = false;
+                this.columnDetails.AllowDBNull = false;
+                this.columnDetails.MaxLength = 2147483647;
+                this.columnCloId.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public RubricRow NewRubricRow() {
+                return ((RubricRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new RubricRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
+                return typeof(RubricRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
+                if ((this.RubricRowChanged != null)) {
+                    this.RubricRowChanged(this, new RubricRowChangeEvent(((RubricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -457,6 +468,8 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
+                if ((this.RubricRowChanging != null)) {
+                    this.RubricRowChanging(this, new RubricRowChangeEvent(((RubricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -464,6 +477,8 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
+                if ((this.RubricRowDeleted != null)) {
+                    this.RubricRowDeleted(this, new RubricRowChangeEvent(((RubricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -471,11 +486,14 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
+                if ((this.RubricRowDeleting != null)) {
+                    this.RubricRowDeleting(this, new RubricRowChangeEvent(((RubricRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveRubricRow(RubricRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -484,7 +502,7 @@ namespace ProjectAssessmentDB {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ProjectBDataSet4 ds = new ProjectBDataSet4();
+                ProjectBDataSet5 ds = new ProjectBDataSet5();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -502,6 +520,7 @@ namespace ProjectAssessmentDB {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "RubricDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -545,33 +564,47 @@ namespace ProjectAssessmentDB {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class RubricRow : global::System.Data.DataRow {
             
+            private RubricDataTable tableRubric;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal RubricRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
+                this.tableRubric = ((RubricDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id {
                 get {
+                    return ((int)(this[this.tableRubric.IdColumn]));
                 }
                 set {
-                }
-                set {
-                    this[this.tableAssessment.TotalMarksColumn] = value;
+                    this[this.tableRubric.IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int TotalWeightage {
+            public string Details {
                 get {
-                    return ((int)(this[this.tableAssessment.TotalWeightageColumn]));
+                    return ((string)(this[this.tableRubric.DetailsColumn]));
                 }
                 set {
-                    this[this.tableAssessment.TotalWeightageColumn] = value;
+                    this[this.tableRubric.DetailsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int CloId {
+                get {
+                    return ((int)(this[this.tableRubric.CloIdColumn]));
+                }
+                set {
+                    this[this.tableRubric.CloIdColumn] = value;
                 }
             }
         }
@@ -580,18 +613,22 @@ namespace ProjectAssessmentDB {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class RubricRowChangeEvent : global::System.EventArgs {
             
+            private RubricRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public RubricRowChangeEvent(RubricRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public RubricRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -607,7 +644,7 @@ namespace ProjectAssessmentDB {
         }
     }
 }
-namespace ProjectAssessmentDB.ProjectBDataSet4TableAdapters {
+namespace ProjectAssessmentDB.ProjectBDataSet5TableAdapters {
     
     
     /// <summary>
@@ -619,6 +656,7 @@ namespace ProjectAssessmentDB.ProjectBDataSet4TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class RubricTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -632,6 +670,7 @@ namespace ProjectAssessmentDB.ProjectBDataSet4TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public RubricTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -728,52 +767,44 @@ namespace ProjectAssessmentDB.ProjectBDataSet4TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Rubric";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Title", "Title");
-            tableMapping.ColumnMappings.Add("DateCreated", "DateCreated");
-            tableMapping.ColumnMappings.Add("TotalMarks", "TotalMarks");
-            tableMapping.ColumnMappings.Add("TotalWeightage", "TotalWeightage");
+            tableMapping.ColumnMappings.Add("Details", "Details");
+            tableMapping.ColumnMappings.Add("CloId", "CloId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Rubric] WHERE (([Id] = @Original_Id) AND ([CloId] = @Original_" +
+                "CloId))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateCreated", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreated", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalMarks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalMarks", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalWeightage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalWeightage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CloId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CloId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Assessment] ([Title], [DateCreated], [TotalMarks], [TotalWeigh" +
-                "tage]) VALUES (@Title, @DateCreated, @TotalMarks, @TotalWeightage);\r\nSELECT Id, " +
-                "Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE (Id = SCOPE" +
-                "_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rubric] ([Id], [Details], [CloId]) VALUES (@Id, @Details, @Clo" +
+                "Id);\r\nSELECT Id, Details, CloId FROM Rubric WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateCreated", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreated", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalMarks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalMarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalWeightage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalWeightage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CloId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CloId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Assessment] SET [Title] = @Title, [DateCreated] = @DateCreated, [TotalMarks] = @TotalMarks, [TotalWeightage] = @TotalWeightage WHERE (([Id] = @Original_Id) AND ([Title] = @Original_Title) AND ([DateCreated] = @Original_DateCreated) AND ([TotalMarks] = @Original_TotalMarks) AND ([TotalWeightage] = @Original_TotalWeightage));
-SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Rubric] SET [Id] = @Id, [Details] = @Details, [CloId] = @CloId WHER" +
+                "E (([Id] = @Original_Id) AND ([CloId] = @Original_CloId));\r\nSELECT Id, Details, " +
+                "CloId FROM Rubric WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateCreated", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreated", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalMarks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalMarks", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalWeightage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalWeightage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Details", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Details", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CloId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CloId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateCreated", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreated", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalMarks", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalMarks", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalWeightage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalWeightage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CloId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CloId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ProjectAssessmentDB.Properties.Settings.Default.ProjectBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -782,6 +813,7 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Id, Details, CloId FROM dbo.Rubric";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -789,6 +821,7 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ProjectBDataSet5.RubricDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -801,7 +834,9 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ProjectBDataSet5.RubricDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjectBDataSet5.RubricDataTable dataTable = new ProjectBDataSet5.RubricDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -809,13 +844,15 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(ProjectBDataSet5.RubricDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjectBDataSet4 dataSet) {
+        public virtual int Update(ProjectBDataSet5 dataSet) {
+            return this.Adapter.Update(dataSet, "Rubric");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -837,16 +874,9 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_Id, int Original_CloId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_Title == null)) {
-                throw new global::System.ArgumentNullException("Original_Title");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Title));
-            }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DateCreated));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_TotalMarks));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_TotalWeightage));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CloId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -867,16 +897,15 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Title, System.DateTime DateCreated, int TotalMarks, int TotalWeightage) {
-            if ((Title == null)) {
-                throw new global::System.ArgumentNullException("Title");
+        public virtual int Insert(int Id, string Details, int CloId) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
+            if ((Details == null)) {
+                throw new global::System.ArgumentNullException("Details");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Title));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Details));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(DateCreated));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(TotalMarks));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(TotalWeightage));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(CloId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -897,27 +926,17 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Title, System.DateTime DateCreated, int TotalMarks, int TotalWeightage, int Original_Id, string Original_Title, System.DateTime Original_DateCreated, int Original_TotalMarks, int Original_TotalWeightage, int Id) {
-            if ((Title == null)) {
-                throw new global::System.ArgumentNullException("Title");
+        public virtual int Update(int Id, string Details, int CloId, int Original_Id, int Original_CloId) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
+            if ((Details == null)) {
+                throw new global::System.ArgumentNullException("Details");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Title));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Details));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(DateCreated));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(TotalMarks));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(TotalWeightage));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
-            if ((Original_Title == null)) {
-                throw new global::System.ArgumentNullException("Original_Title");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Title));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_DateCreated));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_TotalMarks));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_TotalWeightage));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(CloId));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_CloId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -938,8 +957,8 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Title, System.DateTime DateCreated, int TotalMarks, int TotalWeightage, int Original_Id, string Original_Title, System.DateTime Original_DateCreated, int Original_TotalMarks, int Original_TotalWeightage) {
-            return this.Update(Title, DateCreated, TotalMarks, TotalWeightage, Original_Id, Original_Title, Original_DateCreated, Original_TotalMarks, Original_TotalWeightage, Original_Id);
+        public virtual int Update(string Details, int CloId, int Original_Id, int Original_CloId) {
+            return this.Update(Original_Id, Details, CloId, Original_Id, Original_CloId);
         }
     }
     
@@ -955,6 +974,7 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         
         private UpdateOrderOption _updateOrder;
         
+        private RubricTableAdapter _rubricTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -976,9 +996,12 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public RubricTableAdapter RubricTableAdapter {
             get {
+                return this._rubricTableAdapter;
             }
             set {
+                this._rubricTableAdapter = value;
             }
         }
         
@@ -1001,6 +1024,9 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._rubricTableAdapter != null) 
+                            && (this._rubricTableAdapter.Connection != null))) {
+                    return this._rubricTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1015,6 +1041,7 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._rubricTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1026,11 +1053,14 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(ProjectBDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ProjectBDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._rubricTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Rubric.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
+                    result = (result + this._rubricTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1042,10 +1072,13 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(ProjectBDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ProjectBDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._rubricTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Rubric.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
+                    result = (result + this._rubricTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1057,10 +1090,13 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(ProjectBDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ProjectBDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._rubricTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Rubric.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
+                    result = (result + this._rubricTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1096,13 +1132,15 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(ProjectBDataSet4 dataSet) {
+        public virtual int UpdateAll(ProjectBDataSet5 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
+            if (((this._rubricTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._rubricTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1138,6 +1176,13 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._rubricTableAdapter != null)) {
+                    revertConnections.Add(this._rubricTableAdapter, this._rubricTableAdapter.Connection);
+                    this._rubricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._rubricTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._rubricTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._rubricTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._rubricTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1198,6 +1243,9 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
                 if (workConnOpened) {
                     workConnection.Close();
                 }
+                if ((this._rubricTableAdapter != null)) {
+                    this._rubricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rubricTableAdapter]));
+                    this._rubricTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
