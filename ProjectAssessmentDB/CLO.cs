@@ -196,14 +196,11 @@ namespace ProjectAssessmentDB
 
                     if (connection.State == ConnectionState.Open)
                     {
-                        string query = "DELETE FROM Student WHERE Id = (SELECT Id FROM Student WHERE FirstName = @FirstName AND LastName = @LastName AND Email = @Email AND Contact = @Contact AND RegistrationNumber = @RegistrationNumber)";
+                        string query = "DELETE FROM Clo WHERE Id = (SELECT Id FROM Clo WHERE Name = @Name )";
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
-                            command.Parameters.Add(new SqlParameter("@FirstName", textFirstname.Text));
-                            command.Parameters.Add(new SqlParameter("@LastName", textLastname.Text));
-                            command.Parameters.Add(new SqlParameter("@RegistrationNumber", textRegNo.Text));
-                            command.Parameters.Add(new SqlParameter("@Contact", textContact.Text));
-                            command.Parameters.Add(new SqlParameter("@Email", textEmail.Text));
+                            command.Parameters.Add(new SqlParameter("@Name", txtcloname.Text));
+
 
                             int rowsAffected = command.ExecuteNonQuery();
 
