@@ -25,7 +25,25 @@ namespace ProjectAssessmentDB
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnString.connectionString))
+                {
+                    connection.Open();
+                    string query = "UPDATE Rubric SET Details = @Details, CloId = @CloId WHERE Id = @Id";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Details", textBox1.Text);
+                    command.Parameters.AddWithValue("@CloId", comboCLOId.SelectedValue);
+                    command.Parameters.AddWithValue("@Id", textBox2.Text);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Data Updated Successfully");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
