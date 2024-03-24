@@ -14,8 +14,7 @@ namespace ProjectAssessmentDB
     public partial class CLO : Form
     {
 
-        string connectionString = "Data Source=DESKTOP-VCJSKBS;Initial Catalog=ProjectB;Integrated Security=True;";
-            //"Server=DESKTOP-VCJSKBS\\SQLEXPRESS;;Database=ProjectB;Trusted_Connection=True;";
+        string connectionString = ConnString.connectionString;
 
         public CLO()
         {

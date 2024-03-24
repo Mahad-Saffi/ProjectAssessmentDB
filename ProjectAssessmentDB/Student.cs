@@ -311,7 +311,6 @@ namespace ProjectAssessmentDB
             dataGridView1.DataSource = null;
             LoadDataIntoGrid();
         }
-
         //To Load the data to grid after refresh
         private void LoadDataIntoGrid()
         {

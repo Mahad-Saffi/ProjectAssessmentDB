@@ -8,6 +8,7 @@ namespace ProjectAssessmentDB
 {
     public static class ConnString
     {
-        public static string connectionString = "Data Source=DESKTOP-2S9LEDE;Initial Catalog=ProjectB;Integrated Security=True;";
+        public static string connectionString = "Server=DESKTOP-VCJSKBS\\SQLEXPRESS;;Database=ProjectB;Trusted_Connection=True;";
+        //public static string connectionString = "Data Source=DESKTOP-2S9LEDE;Initial Catalog=ProjectB;Integrated Security=True;";
     }
 }
