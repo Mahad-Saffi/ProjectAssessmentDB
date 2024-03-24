@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UpperPanel = new System.Windows.Forms.Panel();
             this.UpperNavText = new System.Windows.Forms.Label();
             this.btnLogoText = new System.Windows.Forms.Button();
@@ -48,9 +49,14 @@
             this.buttonAddRubric = new System.Windows.Forms.Button();
             this.btnUpdateRubric = new System.Windows.Forms.Button();
             this.btnDeleteRubric = new System.Windows.Forms.Button();
+            this.projectBDataSet3 = new ProjectAssessmentDB.ProjectBDataSet3();
+            this.cloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cloTableAdapter = new ProjectAssessmentDB.ProjectBDataSet3TableAdapters.CloTableAdapter();
             this.UpperPanel.SuspendLayout();
             this.SideNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // UpperPanel
@@ -236,12 +242,16 @@
             // 
             // comboCLOId
             // 
+            this.comboCLOId.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cloBindingSource, "Id", true));
+            this.comboCLOId.DataSource = this.cloBindingSource;
+            this.comboCLOId.DisplayMember = "Id";
             this.comboCLOId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboCLOId.FormattingEnabled = true;
             this.comboCLOId.Location = new System.Drawing.Point(394, 115);
             this.comboCLOId.Name = "comboCLOId";
             this.comboCLOId.Size = new System.Drawing.Size(121, 28);
             this.comboCLOId.TabIndex = 9;
+            this.comboCLOId.ValueMember = "Id";
             this.comboCLOId.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
@@ -284,6 +294,20 @@
             this.btnDeleteRubric.Text = "Delete";
             this.btnDeleteRubric.UseVisualStyleBackColor = true;
             // 
+            // projectBDataSet3
+            // 
+            this.projectBDataSet3.DataSetName = "ProjectBDataSet3";
+            this.projectBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cloBindingSource
+            // 
+            this.cloBindingSource.DataMember = "Clo";
+            this.cloBindingSource.DataSource = this.projectBDataSet3;
+            // 
+            // cloTableAdapter
+            // 
+            this.cloTableAdapter.ClearBeforeFill = true;
+            // 
             // Rubric
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,10 +328,13 @@
             this.Name = "Rubric";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rubric";
+            this.Load += new System.EventHandler(this.Rubric_Load);
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             this.SideNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,5 +362,8 @@
         private System.Windows.Forms.Button buttonAddRubric;
         private System.Windows.Forms.Button btnUpdateRubric;
         private System.Windows.Forms.Button btnDeleteRubric;
+        private ProjectBDataSet3 projectBDataSet3;
+        private System.Windows.Forms.BindingSource cloBindingSource;
+        private ProjectBDataSet3TableAdapters.CloTableAdapter cloTableAdapter;
     }
 }
