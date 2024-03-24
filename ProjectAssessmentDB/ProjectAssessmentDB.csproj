@@ -88,6 +88,12 @@
       <DependentUpon>ProjectBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rubric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rubric.Designer.cs">
+      <DependentUpon>Rubric.cs</DependentUpon>
+    </Compile>
     <Compile Include="RubricLevel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rubric.resx">
+      <DependentUpon>Rubric.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RubricLevel.resx">
       <DependentUpon>RubricLevel.cs</DependentUpon>

@@ -13,6 +13,8 @@ namespace ProjectAssessmentDB
 {
     public partial class ManageAssessments : Form
     {
+        public int tempId = 0;
+
         string connectionString = ConnString.connectionString;
         public ManageAssessments()
         {
@@ -96,6 +98,7 @@ namespace ProjectAssessmentDB
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
+                tempId = Convert.ToInt32(row.Cells[0].Value);
                 txtassesmentTitle.Text = row.Cells[1].Value.ToString();
                 txtassesmentMarks.Text = row.Cells[3].Value.ToString();
                 txtassesmentWeightage.Text = row.Cells[4].Value.ToString();
@@ -210,14 +213,21 @@ namespace ProjectAssessmentDB
 
                     if(connection.State == ConnectionState.Open)
                     {
-                        string query = "UPDATE Assessment SET Title = @Title, TotalMarks = @TotalMarks, TotalWeightage = @TotalWeightage WHERE Id = (SELECT Id FROM Assessment WHERE Title = @Title AND TotalMarks = @TotalMarks AND TotalWeightage = @TotalWeightage)";
+                        string query = "UPDATE Assessment SET Title = @Title, TotalMarks = @TotalMarks, TotalWeightage = @TotalWeightage WHERE Id = @Id";
                         using(SqlCommand command = new SqlCommand(query, connection))
                         {
+                            command.Parameters.Add(new SqlParameter("@Id", tempId));
                             command.Parameters.Add(new SqlParameter("@Title", txtassesmentTitle.Text));
                             command.Parameters.Add(new SqlParameter("@TotalMarks", txtassesmentMarks.Text));
                             command.Parameters.Add(new SqlParameter("@TotalWeightage", txtassesmentWeightage.Text));
 
                             command.ExecuteNonQuery();
+
+                            MessageBox.Show("Assessment Updated Successfully");
+                            RefreshGrid();
+                            txtassesmentTitle.Text = "";
+                            txtassesmentMarks.Text = "";
+                            txtassesmentWeightage.Text = "";
                         }
                     }
 
