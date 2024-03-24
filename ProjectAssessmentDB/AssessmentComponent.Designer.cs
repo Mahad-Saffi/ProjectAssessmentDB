@@ -68,6 +68,12 @@
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assessmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectBDataSet4 = new ProjectAssessmentDB.ProjectBDataSet4();
+            this.assessmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.assessmentTableAdapter1 = new ProjectAssessmentDB.ProjectBDataSet4TableAdapters.AssessmentTableAdapter();
+            this.projectBDataSet5 = new ProjectAssessmentDB.ProjectBDataSet5();
+            this.rubricBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.rubricTableAdapter1 = new ProjectAssessmentDB.ProjectBDataSet5TableAdapters.RubricTableAdapter();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).BeginInit();
@@ -78,6 +84,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentComponentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnmanagerubrics
@@ -280,13 +290,16 @@
             // 
             // comboAssessment
             // 
-            this.comboAssessment.DataSource = this.assessmentBindingSource;
+            this.comboAssessment.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.assessmentBindingSource, "Id", true));
+            this.comboAssessment.DataSource = this.assessmentBindingSource1;
             this.comboAssessment.DisplayMember = "Title";
             this.comboAssessment.FormattingEnabled = true;
             this.comboAssessment.Location = new System.Drawing.Point(466, 197);
             this.comboAssessment.Name = "comboAssessment";
             this.comboAssessment.Size = new System.Drawing.Size(138, 21);
             this.comboAssessment.TabIndex = 10;
+            this.comboAssessment.ValueMember = "Id";
+            this.comboAssessment.Click += new System.EventHandler(this.comboAssessment_Click);
             // 
             // assessmentBindingSource
             // 
@@ -300,13 +313,15 @@
             // 
             // comboRubric
             // 
-            this.comboRubric.DataSource = this.rubricBindingSource1;
-            this.comboRubric.DisplayMember = "Id";
+            this.comboRubric.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.rubricBindingSource2, "Id", true));
+            this.comboRubric.DataSource = this.rubricBindingSource2;
+            this.comboRubric.DisplayMember = "Details";
             this.comboRubric.FormattingEnabled = true;
             this.comboRubric.Location = new System.Drawing.Point(827, 196);
             this.comboRubric.Name = "comboRubric";
             this.comboRubric.Size = new System.Drawing.Size(121, 21);
             this.comboRubric.TabIndex = 11;
+            this.comboRubric.ValueMember = "Id";
             // 
             // rubricBindingSource1
             // 
@@ -347,6 +362,7 @@
             this.btnAddAssesComp.TabIndex = 13;
             this.btnAddAssesComp.Text = "Add";
             this.btnAddAssesComp.UseVisualStyleBackColor = true;
+            this.btnAddAssesComp.Click += new System.EventHandler(this.btnAddAssesComp_Click);
             // 
             // btnUpdateAssesComp
             // 
@@ -439,6 +455,34 @@
             this.assessmentIdDataGridViewTextBoxColumn.HeaderText = "AssessmentId";
             this.assessmentIdDataGridViewTextBoxColumn.Name = "assessmentIdDataGridViewTextBoxColumn";
             // 
+            // projectBDataSet4
+            // 
+            this.projectBDataSet4.DataSetName = "ProjectBDataSet4";
+            this.projectBDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // assessmentBindingSource1
+            // 
+            this.assessmentBindingSource1.DataMember = "Assessment";
+            this.assessmentBindingSource1.DataSource = this.projectBDataSet4;
+            // 
+            // assessmentTableAdapter1
+            // 
+            this.assessmentTableAdapter1.ClearBeforeFill = true;
+            // 
+            // projectBDataSet5
+            // 
+            this.projectBDataSet5.DataSetName = "ProjectBDataSet5";
+            this.projectBDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rubricBindingSource2
+            // 
+            this.rubricBindingSource2.DataMember = "Rubric";
+            this.rubricBindingSource2.DataSource = this.projectBDataSet5;
+            // 
+            // rubricTableAdapter1
+            // 
+            this.rubricTableAdapter1.ClearBeforeFill = true;
+            // 
             // AssessmentComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,6 +518,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentComponentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +568,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateUpdatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn assessmentIdDataGridViewTextBoxColumn;
+        private ProjectBDataSet4 projectBDataSet4;
+        private System.Windows.Forms.BindingSource assessmentBindingSource1;
+        private ProjectBDataSet4TableAdapters.AssessmentTableAdapter assessmentTableAdapter1;
+        private ProjectBDataSet5 projectBDataSet5;
+        private System.Windows.Forms.BindingSource rubricBindingSource2;
+        private ProjectBDataSet5TableAdapters.RubricTableAdapter rubricTableAdapter1;
     }
 }

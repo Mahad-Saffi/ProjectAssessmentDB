@@ -75,6 +75,10 @@ namespace ProjectAssessmentDB
 
         private void AssessmentComponent_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectBDataSet5.Rubric' table. You can move, or remove it, as needed.
+            this.rubricTableAdapter1.Fill(this.projectBDataSet5.Rubric);
+            // TODO: This line of code loads data into the 'projectBDataSet4.Assessment' table. You can move, or remove it, as needed.
+            this.assessmentTableAdapter1.Fill(this.projectBDataSet4.Assessment);
             // TODO: This line of code loads data into the 'projectBDataSet3.AssessmentComponent' table. You can move, or remove it, as needed.
             this.assessmentComponentTableAdapter.Fill(this.projectBDataSet3.AssessmentComponent);
             RefreshGrid();
@@ -123,5 +127,76 @@ namespace ProjectAssessmentDB
 
             }
         }
+        private void btnAddAssesComp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+
+                if (connection.State == ConnectionState.Open)
+                {
+                    string query = "INSERT INTO AssessmentComponent(Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId) VALUES (@Name, @RubricId, @TotalMarks, @DateCreated, @DateUpdated, @AssessmentId)";
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    command.Parameters.Add(new SqlParameter("@Name", textBox1.Text));
+                    command.Parameters.Add(new SqlParameter("@RubricId", comboRubric.Text));
+                    command.Parameters.Add(new SqlParameter("@TotalMarks", textBox2.Text));
+                    command.Parameters.Add(new SqlParameter("@DateCreated", DateTime.Today.Day));
+                    command.Parameters.Add(new SqlParameter("@DateUpdated", DateTime.Today.Day));
+                    command.Parameters.Add(new SqlParameter("@AssessmentId", comboAssessment.Text));
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Record Added Successfully");
+                    RefreshGrid();
+                    textBox1.Text = "";
+                    comboRubric.Text = "";
+                    textBox2.Text = "";
+                    comboAssessment.Text = "";
+
+                    connection.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error in connection");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void comboAssessment_Click(object sender, EventArgs e)
+        {/*
+            try
+            {
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+
+                if (connection.State == ConnectionState.Open)
+                {
+                    string query = "Select * from Assessment";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter da = new SqlDataAdapter (command);
+                    DataSet ds = new DataSet();
+                    da.Fill (ds);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    comboAssessment.DataSource = ds.Tables[0];
+                    comboAssessment.DisplayMember = "Title";
+                    comboAssessment.ValueMember = "Id";
+                }
+                else
+                {
+                    MessageBox.Show("Error in connection");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+        }
+        
     }
 }
