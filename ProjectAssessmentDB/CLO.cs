@@ -162,16 +162,23 @@ namespace ProjectAssessmentDB
 
                 if (connection.State == ConnectionState.Open)
                 {
-                    string query = "UPDATE Clo SET Name = @Name, DateUpdated = @DateUpdated WHERE Id = (SELECT Id FROM Clo WHERE Name = @Name)";
+                    string query = "UPDATE Clo SET Name = @Name,DateUpdated = @DateUpdated WHERE Name = @Name";
                     SqlCommand command = new SqlCommand(query, connection);
 
                     command.Parameters.Add(new SqlParameter("@Name", txtcloname.Text));
                     command.Parameters.Add(new SqlParameter("@DateUpdated", DateTime.Today.Date));
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Clo Updated Successfully");
-                    RefreshGrid();
-                    txtcloname.Text = "";
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("CLO Updated Successfully");
+                        RefreshGrid();
+                        txtcloname.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching CLO found to update.");
+                    }
 
                     connection.Close();
                 }
