@@ -297,6 +297,7 @@
             this.btnDeleteRubric.TabIndex = 13;
             this.btnDeleteRubric.Text = "Delete";
             this.btnDeleteRubric.UseVisualStyleBackColor = true;
+            this.btnDeleteRubric.Click += new System.EventHandler(this.btnDeleteRubric_Click);
             // 
             // projectBDataSet3
             // 

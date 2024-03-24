@@ -68,5 +68,26 @@ namespace ProjectAssessmentDB
         {
 
         }
+
+        private void btnDeleteRubric_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConnString.connectionString))
+                {
+                    connection.Open();
+                    string query = "DELETE FROM Rubric WHERE Id = @Id";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Id", textBox2.Text);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Data Deleted Successfully");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
