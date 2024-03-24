@@ -38,6 +38,7 @@ namespace ProjectAssessmentDB
                     command.ExecuteNonQuery();
                     connection.Close();
                     MessageBox.Show("Data Updated Successfully");
+                    Rubric_Load(sender, e);
                 }
             }
             catch (Exception ex)
@@ -62,6 +63,7 @@ namespace ProjectAssessmentDB
                     command.ExecuteNonQuery();
                     connection.Close();
                     MessageBox.Show("Data Inserted Successfully");
+                    Rubric_Load(sender, e);
                 }
             }
             catch (Exception ex)
@@ -72,6 +74,8 @@ namespace ProjectAssessmentDB
 
         private void Rubric_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectBDataSet1.Rubric' table. You can move, or remove it, as needed.
+            this.rubricTableAdapter.Fill(this.projectBDataSet1.Rubric);
             // TODO: This line of code loads data into the 'projectBDataSet3.Clo' table. You can move, or remove it, as needed.
             this.cloTableAdapter.Fill(this.projectBDataSet3.Clo);
 
@@ -100,11 +104,29 @@ namespace ProjectAssessmentDB
                     command.ExecuteNonQuery();
                     connection.Close();
                     MessageBox.Show("Data Deleted Successfully");
+                    Rubric_Load(sender, e);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                textBox2.Text = row.Cells[0].Value.ToString();
+                textBox1.Text = row.Cells[1].Value.ToString();
+                comboCLOId.Text = row.Cells[2].Value.ToString();
+                Rubric_Load(sender, e);
             }
         }
     }
