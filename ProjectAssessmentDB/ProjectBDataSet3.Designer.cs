@@ -24,7 +24,7 @@ namespace ProjectAssessmentDB {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class ProjectBDataSet3 : global::System.Data.DataSet {
         
-        private AssessmentComponentDataTable tableAssessmentComponent;
+        private CloDataTable tableClo;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace ProjectAssessmentDB {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["AssessmentComponent"] != null)) {
-                    base.Tables.Add(new AssessmentComponentDataTable(ds.Tables["AssessmentComponent"]));
+                if ((ds.Tables["Clo"] != null)) {
+                    base.Tables.Add(new CloDataTable(ds.Tables["Clo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ProjectAssessmentDB {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AssessmentComponentDataTable AssessmentComponent {
+        public CloDataTable Clo {
             get {
-                return this.tableAssessmentComponent;
+                return this.tableClo;
             }
         }
         
@@ -152,8 +152,8 @@ namespace ProjectAssessmentDB {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["AssessmentComponent"] != null)) {
-                    base.Tables.Add(new AssessmentComponentDataTable(ds.Tables["AssessmentComponent"]));
+                if ((ds.Tables["Clo"] != null)) {
+                    base.Tables.Add(new CloDataTable(ds.Tables["Clo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ProjectAssessmentDB {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAssessmentComponent = ((AssessmentComponentDataTable)(base.Tables["AssessmentComponent"]));
+            this.tableClo = ((CloDataTable)(base.Tables["Clo"]));
             if ((initTable == true)) {
-                if ((this.tableAssessmentComponent != null)) {
-                    this.tableAssessmentComponent.InitVars();
+                if ((this.tableClo != null)) {
+                    this.tableClo.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace ProjectAssessmentDB {
             this.Namespace = "http://tempuri.org/ProjectBDataSet3.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAssessmentComponent = new AssessmentComponentDataTable();
-            base.Tables.Add(this.tableAssessmentComponent);
+            this.tableClo = new CloDataTable();
+            base.Tables.Add(this.tableClo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeAssessmentComponent() {
+        private bool ShouldSerializeClo() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace ProjectAssessmentDB {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void AssessmentComponentRowChangeEventHandler(object sender, AssessmentComponentRowChangeEvent e);
+        public delegate void CloRowChangeEventHandler(object sender, CloRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AssessmentComponentDataTable : global::System.Data.TypedTableBase<AssessmentComponentRow> {
+        public partial class CloDataTable : global::System.Data.TypedTableBase<CloRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -295,8 +295,8 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentComponentDataTable() {
-                this.TableName = "AssessmentComponent";
+            public CloDataTable() {
+                this.TableName = "Clo";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +304,7 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal AssessmentComponentDataTable(global::System.Data.DataTable table) {
+            internal CloDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,7 +321,7 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected AssessmentComponentDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CloDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -393,58 +393,52 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentComponentRow this[int index] {
+            public CloRow this[int index] {
                 get {
-                    return ((AssessmentComponentRow)(this.Rows[index]));
+                    return ((CloRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AssessmentComponentRowChangeEventHandler AssessmentComponentRowChanging;
+            public event CloRowChangeEventHandler CloRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AssessmentComponentRowChangeEventHandler AssessmentComponentRowChanged;
+            public event CloRowChangeEventHandler CloRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AssessmentComponentRowChangeEventHandler AssessmentComponentRowDeleting;
+            public event CloRowChangeEventHandler CloRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AssessmentComponentRowChangeEventHandler AssessmentComponentRowDeleted;
+            public event CloRowChangeEventHandler CloRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddAssessmentComponentRow(AssessmentComponentRow row) {
+            public void AddCloRow(CloRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentComponentRow AddAssessmentComponentRow(string Name, int RubricId, int TotalMarks, System.DateTime DateCreated, System.DateTime DateUpdated, int AssessmentId) {
-                AssessmentComponentRow rowAssessmentComponentRow = ((AssessmentComponentRow)(this.NewRow()));
+            public CloRow AddCloRow() {
+                CloRow rowCloRow = ((CloRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        Name,
-                        RubricId,
-                        TotalMarks,
-                        DateCreated,
-                        DateUpdated,
-                        AssessmentId};
-                rowAssessmentComponentRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAssessmentComponentRow);
-                return rowAssessmentComponentRow;
+                        null};
+                rowCloRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCloRow);
+                return rowCloRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentComponentRow FindById(int Id) {
-                return ((AssessmentComponentRow)(this.Rows.Find(new object[] {
+            public CloRow FindById(int Id) {
+                return ((CloRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AssessmentComponentDataTable cln = ((AssessmentComponentDataTable)(base.Clone()));
+                CloDataTable cln = ((CloDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,7 +446,7 @@ namespace ProjectAssessmentDB {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AssessmentComponentDataTable();
+                return new CloDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -503,28 +497,28 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentComponentRow NewAssessmentComponentRow() {
-                return ((AssessmentComponentRow)(this.NewRow()));
+            public CloRow NewCloRow() {
+                return ((CloRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AssessmentComponentRow(builder);
+                return new CloRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AssessmentComponentRow);
+                return typeof(CloRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AssessmentComponentRowChanged != null)) {
-                    this.AssessmentComponentRowChanged(this, new AssessmentComponentRowChangeEvent(((AssessmentComponentRow)(e.Row)), e.Action));
+                if ((this.CloRowChanged != null)) {
+                    this.CloRowChanged(this, new CloRowChangeEvent(((CloRow)(e.Row)), e.Action));
                 }
             }
             
@@ -532,8 +526,8 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AssessmentComponentRowChanging != null)) {
-                    this.AssessmentComponentRowChanging(this, new AssessmentComponentRowChangeEvent(((AssessmentComponentRow)(e.Row)), e.Action));
+                if ((this.CloRowChanging != null)) {
+                    this.CloRowChanging(this, new CloRowChangeEvent(((CloRow)(e.Row)), e.Action));
                 }
             }
             
@@ -541,8 +535,8 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AssessmentComponentRowDeleted != null)) {
-                    this.AssessmentComponentRowDeleted(this, new AssessmentComponentRowChangeEvent(((AssessmentComponentRow)(e.Row)), e.Action));
+                if ((this.CloRowDeleted != null)) {
+                    this.CloRowDeleted(this, new CloRowChangeEvent(((CloRow)(e.Row)), e.Action));
                 }
             }
             
@@ -550,14 +544,14 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AssessmentComponentRowDeleting != null)) {
-                    this.AssessmentComponentRowDeleting(this, new AssessmentComponentRowChangeEvent(((AssessmentComponentRow)(e.Row)), e.Action));
+                if ((this.CloRowDeleting != null)) {
+                    this.CloRowDeleting(this, new CloRowChangeEvent(((CloRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveAssessmentComponentRow(AssessmentComponentRow row) {
+            public void RemoveCloRow(CloRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -584,7 +578,7 @@ namespace ProjectAssessmentDB {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AssessmentComponentDataTable";
+                attribute2.FixedValue = "CloDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -628,77 +622,25 @@ namespace ProjectAssessmentDB {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AssessmentComponentRow : global::System.Data.DataRow {
+        public partial class CloRow : global::System.Data.DataRow {
             
-            private AssessmentComponentDataTable tableAssessmentComponent;
+            private CloDataTable tableClo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal AssessmentComponentRow(global::System.Data.DataRowBuilder rb) : 
+            internal CloRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAssessmentComponent = ((AssessmentComponentDataTable)(this.Table));
+                this.tableClo = ((CloDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableAssessmentComponent.IdColumn]));
+                    return ((int)(this[this.tableClo.IdColumn]));
                 }
                 set {
-                    this[this.tableAssessmentComponent.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Name {
-                get {
-                    return ((string)(this[this.tableAssessmentComponent.NameColumn]));
-                }
-                set {
-                    this[this.tableAssessmentComponent.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int RubricId {
-                get {
-                    return ((int)(this[this.tableAssessmentComponent.RubricIdColumn]));
-                }
-                set {
-                    this[this.tableAssessmentComponent.RubricIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int TotalMarks {
-                get {
-                    return ((int)(this[this.tableAssessmentComponent.TotalMarksColumn]));
-                }
-                set {
-                    this[this.tableAssessmentComponent.TotalMarksColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime DateCreated {
-                get {
-                    return ((global::System.DateTime)(this[this.tableAssessmentComponent.DateCreatedColumn]));
-                }
-                set {
-                    this[this.tableAssessmentComponent.DateCreatedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime DateUpdated {
-                get {
-                    return ((global::System.DateTime)(this[this.tableAssessmentComponent.DateUpdatedColumn]));
+                    this[this.tableClo.IdColumn] = value;
                 }
                 set {
                     this[this.tableAssessmentComponent.DateUpdatedColumn] = value;
@@ -721,22 +663,22 @@ namespace ProjectAssessmentDB {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class AssessmentComponentRowChangeEvent : global::System.EventArgs {
+        public class CloRowChangeEvent : global::System.EventArgs {
             
-            private AssessmentComponentRow eventRow;
+            private CloRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentComponentRowChangeEvent(AssessmentComponentRow row, global::System.Data.DataRowAction action) {
+            public CloRowChangeEvent(CloRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentComponentRow Row {
+            public CloRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -764,7 +706,7 @@ namespace ProjectAssessmentDB.ProjectBDataSet3TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AssessmentComponentTableAdapter : global::System.ComponentModel.Component {
+    public partial class CloTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -778,7 +720,7 @@ namespace ProjectAssessmentDB.ProjectBDataSet3TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public AssessmentComponentTableAdapter() {
+        public CloTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -875,7 +817,7 @@ namespace ProjectAssessmentDB.ProjectBDataSet3TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AssessmentComponent";
+            tableMapping.DataSetTable = "Clo";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("RubricId", "RubricId");
@@ -886,7 +828,7 @@ namespace ProjectAssessmentDB.ProjectBDataSet3TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[AssessmentComponent] WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ([RubricId] = @Original_RubricId) AND ([TotalMarks] = @Original_TotalMarks) AND ([DateCreated] = @Original_DateCreated) AND ([DateUpdated] = @Original_DateUpdated) AND ([AssessmentId] = @Original_AssessmentId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Clo] WHERE (([Id] = @Original_Id))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -931,7 +873,7 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ProjectAssessmentDB.Properties.Settings.Default.ProjectBConnectionString1;
+            this._connection.ConnectionString = global::ProjectAssessmentDB.Properties.Settings.Default.ProjectBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -940,8 +882,7 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FRO" +
-                "M dbo.AssessmentComponent";
+            this._commandCollection[0].CommandText = "SELECT Id FROM dbo.Clo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -949,7 +890,7 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjectBDataSet3.AssessmentComponentDataTable dataTable) {
+        public virtual int Fill(ProjectBDataSet3.CloDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -962,9 +903,9 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjectBDataSet3.AssessmentComponentDataTable GetData() {
+        public virtual ProjectBDataSet3.CloDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ProjectBDataSet3.AssessmentComponentDataTable dataTable = new ProjectBDataSet3.AssessmentComponentDataTable();
+            ProjectBDataSet3.CloDataTable dataTable = new ProjectBDataSet3.CloDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -972,7 +913,7 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjectBDataSet3.AssessmentComponentDataTable dataTable) {
+        public virtual int Update(ProjectBDataSet3.CloDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -980,7 +921,7 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(ProjectBDataSet3 dataSet) {
-            return this.Adapter.Update(dataSet, "AssessmentComponent");
+            return this.Adapter.Update(dataSet, "Clo");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1002,7 +943,7 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Name, int Original_RubricId, int Original_TotalMarks, System.DateTime Original_DateCreated, System.DateTime Original_DateUpdated, int Original_AssessmentId) {
+        public virtual int Delete(int Original_Id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
@@ -1129,7 +1070,7 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         
         private UpdateOrderOption _updateOrder;
         
-        private AssessmentComponentTableAdapter _assessmentComponentTableAdapter;
+        private CloTableAdapter _cloTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1151,12 +1092,12 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public AssessmentComponentTableAdapter AssessmentComponentTableAdapter {
+        public CloTableAdapter CloTableAdapter {
             get {
-                return this._assessmentComponentTableAdapter;
+                return this._cloTableAdapter;
             }
             set {
-                this._assessmentComponentTableAdapter = value;
+                this._cloTableAdapter = value;
             }
         }
         
@@ -1179,9 +1120,9 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._assessmentComponentTableAdapter != null) 
-                            && (this._assessmentComponentTableAdapter.Connection != null))) {
-                    return this._assessmentComponentTableAdapter.Connection;
+                if (((this._cloTableAdapter != null) 
+                            && (this._cloTableAdapter.Connection != null))) {
+                    return this._cloTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1196,7 +1137,7 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._assessmentComponentTableAdapter != null)) {
+                if ((this._cloTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1210,12 +1151,12 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(ProjectBDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._assessmentComponentTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AssessmentComponent.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cloTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Clo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._assessmentComponentTableAdapter.Update(updatedRows));
+                    result = (result + this._cloTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1229,11 +1170,11 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(ProjectBDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._assessmentComponentTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AssessmentComponent.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cloTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Clo.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._assessmentComponentTableAdapter.Update(addedRows));
+                    result = (result + this._cloTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1247,11 +1188,11 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(ProjectBDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._assessmentComponentTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AssessmentComponent.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cloTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Clo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._assessmentComponentTableAdapter.Update(deletedRows));
+                    result = (result + this._cloTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1294,8 +1235,8 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._assessmentComponentTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._assessmentComponentTableAdapter.Connection) == false))) {
+            if (((this._cloTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cloTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1331,13 +1272,13 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._assessmentComponentTableAdapter != null)) {
-                    revertConnections.Add(this._assessmentComponentTableAdapter, this._assessmentComponentTableAdapter.Connection);
-                    this._assessmentComponentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._assessmentComponentTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._assessmentComponentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._assessmentComponentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._assessmentComponentTableAdapter.Adapter);
+                if ((this._cloTableAdapter != null)) {
+                    revertConnections.Add(this._cloTableAdapter, this._cloTableAdapter.Connection);
+                    this._cloTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cloTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cloTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cloTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cloTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1398,9 +1339,9 @@ SELECT Id, Name, RubricId, TotalMarks, DateCreated, DateUpdated, AssessmentId FR
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._assessmentComponentTableAdapter != null)) {
-                    this._assessmentComponentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._assessmentComponentTableAdapter]));
-                    this._assessmentComponentTableAdapter.Transaction = null;
+                if ((this._cloTableAdapter != null)) {
+                    this._cloTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cloTableAdapter]));
+                    this._cloTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

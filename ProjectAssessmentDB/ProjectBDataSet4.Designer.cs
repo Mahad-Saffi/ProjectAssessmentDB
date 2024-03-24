@@ -24,7 +24,7 @@ namespace ProjectAssessmentDB {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class ProjectBDataSet4 : global::System.Data.DataSet {
         
-        private AssessmentDataTable tableAssessment;
+        private CloDataTable tableClo;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,6 @@ namespace ProjectAssessmentDB {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Assessment"] != null)) {
-                    base.Tables.Add(new AssessmentDataTable(ds.Tables["Assessment"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +77,7 @@ namespace ProjectAssessmentDB {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AssessmentDataTable Assessment {
             get {
-                return this.tableAssessment;
             }
         }
         
@@ -152,8 +148,6 @@ namespace ProjectAssessmentDB {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Assessment"] != null)) {
-                    base.Tables.Add(new AssessmentDataTable(ds.Tables["Assessment"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +182,7 @@ namespace ProjectAssessmentDB {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAssessment = ((AssessmentDataTable)(base.Tables["Assessment"]));
             if ((initTable == true)) {
-                if ((this.tableAssessment != null)) {
-                    this.tableAssessment.InitVars();
                 }
             }
         }
@@ -204,13 +195,10 @@ namespace ProjectAssessmentDB {
             this.Namespace = "http://tempuri.org/ProjectBDataSet4.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAssessment = new AssessmentDataTable();
-            base.Tables.Add(this.tableAssessment);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeAssessment() {
             return false;
         }
         
@@ -270,14 +258,12 @@ namespace ProjectAssessmentDB {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void AssessmentRowChangeEventHandler(object sender, AssessmentRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AssessmentDataTable : global::System.Data.TypedTableBase<AssessmentRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -291,8 +277,6 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentDataTable() {
-                this.TableName = "Assessment";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +284,6 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal AssessmentDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,7 +300,6 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected AssessmentDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -373,56 +355,36 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentRow this[int index] {
                 get {
-                    return ((AssessmentRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AssessmentRowChangeEventHandler AssessmentRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AssessmentRowChangeEventHandler AssessmentRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AssessmentRowChangeEventHandler AssessmentRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AssessmentRowChangeEventHandler AssessmentRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddAssessmentRow(AssessmentRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentRow AddAssessmentRow(string Title, System.DateTime DateCreated, int TotalMarks, int TotalWeightage) {
-                AssessmentRow rowAssessmentRow = ((AssessmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        Title,
-                        DateCreated,
-                        TotalMarks,
-                        TotalWeightage};
-                rowAssessmentRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAssessmentRow);
-                return rowAssessmentRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentRow FindById(int Id) {
-                return ((AssessmentRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AssessmentDataTable cln = ((AssessmentDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -430,7 +392,6 @@ namespace ProjectAssessmentDB {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AssessmentDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -473,28 +434,22 @@ namespace ProjectAssessmentDB {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentRow NewAssessmentRow() {
-                return ((AssessmentRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AssessmentRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AssessmentRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AssessmentRowChanged != null)) {
-                    this.AssessmentRowChanged(this, new AssessmentRowChangeEvent(((AssessmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -502,8 +457,6 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AssessmentRowChanging != null)) {
-                    this.AssessmentRowChanging(this, new AssessmentRowChangeEvent(((AssessmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -511,8 +464,6 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AssessmentRowDeleted != null)) {
-                    this.AssessmentRowDeleted(this, new AssessmentRowChangeEvent(((AssessmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -520,14 +471,11 @@ namespace ProjectAssessmentDB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AssessmentRowDeleting != null)) {
-                    this.AssessmentRowDeleting(this, new AssessmentRowChangeEvent(((AssessmentRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveAssessmentRow(AssessmentRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -554,7 +502,6 @@ namespace ProjectAssessmentDB {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AssessmentDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -598,55 +545,19 @@ namespace ProjectAssessmentDB {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AssessmentRow : global::System.Data.DataRow {
             
-            private AssessmentDataTable tableAssessment;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal AssessmentRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAssessment = ((AssessmentDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableAssessment.IdColumn]));
                 }
                 set {
-                    this[this.tableAssessment.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Title {
-                get {
-                    return ((string)(this[this.tableAssessment.TitleColumn]));
-                }
-                set {
-                    this[this.tableAssessment.TitleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime DateCreated {
-                get {
-                    return ((global::System.DateTime)(this[this.tableAssessment.DateCreatedColumn]));
-                }
-                set {
-                    this[this.tableAssessment.DateCreatedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int TotalMarks {
-                get {
-                    return ((int)(this[this.tableAssessment.TotalMarksColumn]));
                 }
                 set {
                     this[this.tableAssessment.TotalMarksColumn] = value;
@@ -669,22 +580,18 @@ namespace ProjectAssessmentDB {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class AssessmentRowChangeEvent : global::System.EventArgs {
             
-            private AssessmentRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentRowChangeEvent(AssessmentRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssessmentRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -712,7 +619,6 @@ namespace ProjectAssessmentDB.ProjectBDataSet4TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AssessmentTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -726,7 +632,6 @@ namespace ProjectAssessmentDB.ProjectBDataSet4TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public AssessmentTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -823,7 +728,6 @@ namespace ProjectAssessmentDB.ProjectBDataSet4TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Assessment";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Title", "Title");
             tableMapping.ColumnMappings.Add("DateCreated", "DateCreated");
@@ -832,9 +736,6 @@ namespace ProjectAssessmentDB.ProjectBDataSet4TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Assessment] WHERE (([Id] = @Original_Id) AND ([Title] = @Origi" +
-                "nal_Title) AND ([DateCreated] = @Original_DateCreated) AND ([TotalMarks] = @Orig" +
-                "inal_TotalMarks) AND ([TotalWeightage] = @Original_TotalWeightage))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -873,7 +774,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ProjectAssessmentDB.Properties.Settings.Default.ProjectBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -882,7 +782,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM dbo.Assessment";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -890,7 +789,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjectBDataSet4.AssessmentDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -903,9 +801,7 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjectBDataSet4.AssessmentDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ProjectBDataSet4.AssessmentDataTable dataTable = new ProjectBDataSet4.AssessmentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -913,7 +809,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjectBDataSet4.AssessmentDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -921,7 +816,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(ProjectBDataSet4 dataSet) {
-            return this.Adapter.Update(dataSet, "Assessment");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -943,7 +837,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Title, System.DateTime Original_DateCreated, int Original_TotalMarks, int Original_TotalWeightage) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Title == null)) {
                 throw new global::System.ArgumentNullException("Original_Title");
@@ -1062,7 +955,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         
         private UpdateOrderOption _updateOrder;
         
-        private AssessmentTableAdapter _assessmentTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1084,12 +976,9 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public AssessmentTableAdapter AssessmentTableAdapter {
             get {
-                return this._assessmentTableAdapter;
             }
             set {
-                this._assessmentTableAdapter = value;
             }
         }
         
@@ -1112,9 +1001,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._assessmentTableAdapter != null) 
-                            && (this._assessmentTableAdapter.Connection != null))) {
-                    return this._assessmentTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1129,7 +1015,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._assessmentTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1143,12 +1028,9 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(ProjectBDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._assessmentTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Assessment.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._assessmentTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1162,11 +1044,8 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(ProjectBDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._assessmentTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Assessment.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._assessmentTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1180,11 +1059,8 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(ProjectBDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._assessmentTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Assessment.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._assessmentTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1227,8 +1103,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._assessmentTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._assessmentTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1264,13 +1138,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._assessmentTableAdapter != null)) {
-                    revertConnections.Add(this._assessmentTableAdapter, this._assessmentTableAdapter.Connection);
-                    this._assessmentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._assessmentTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._assessmentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._assessmentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._assessmentTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1331,9 +1198,6 @@ SELECT Id, Title, DateCreated, TotalMarks, TotalWeightage FROM Assessment WHERE 
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._assessmentTableAdapter != null)) {
-                    this._assessmentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._assessmentTableAdapter]));
-                    this._assessmentTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
