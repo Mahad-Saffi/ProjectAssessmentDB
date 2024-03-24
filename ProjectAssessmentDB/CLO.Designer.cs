@@ -44,6 +44,8 @@
             this.btnclodelete = new System.Windows.Forms.Button();
             this.btncloadd = new System.Windows.Forms.Button();
             this.btncloupdate = new System.Windows.Forms.Button();
+            this.TextID = new System.Windows.Forms.TextBox();
+            this.LabelID = new System.Windows.Forms.Label();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -193,9 +195,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(541, 91);
+            this.dataGridView1.Location = new System.Drawing.Point(385, 172);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(404, 330);
+            this.dataGridView1.Size = new System.Drawing.Size(560, 330);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -204,7 +206,7 @@
             // 
             this.labelcloname.AutoSize = true;
             this.labelcloname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.labelcloname.Location = new System.Drawing.Point(262, 91);
+            this.labelcloname.Location = new System.Drawing.Point(262, 112);
             this.labelcloname.Name = "labelcloname";
             this.labelcloname.Size = new System.Drawing.Size(71, 26);
             this.labelcloname.TabIndex = 7;
@@ -214,7 +216,7 @@
             // txtcloname
             // 
             this.txtcloname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtcloname.Location = new System.Drawing.Point(267, 140);
+            this.txtcloname.Location = new System.Drawing.Point(352, 113);
             this.txtcloname.Name = "txtcloname";
             this.txtcloname.Size = new System.Drawing.Size(235, 26);
             this.txtcloname.TabIndex = 8;
@@ -223,7 +225,7 @@
             // btnclodelete
             // 
             this.btnclodelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btnclodelete.Location = new System.Drawing.Point(830, 434);
+            this.btnclodelete.Location = new System.Drawing.Point(264, 256);
             this.btnclodelete.Name = "btnclodelete";
             this.btnclodelete.Size = new System.Drawing.Size(115, 36);
             this.btnclodelete.TabIndex = 10;
@@ -234,7 +236,7 @@
             // btncloadd
             // 
             this.btncloadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btncloadd.Location = new System.Drawing.Point(267, 193);
+            this.btncloadd.Location = new System.Drawing.Point(264, 172);
             this.btncloadd.Name = "btncloadd";
             this.btncloadd.Size = new System.Drawing.Size(115, 36);
             this.btncloadd.TabIndex = 11;
@@ -245,7 +247,7 @@
             // btncloupdate
             // 
             this.btncloupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btncloupdate.Location = new System.Drawing.Point(388, 193);
+            this.btncloupdate.Location = new System.Drawing.Point(264, 214);
             this.btncloupdate.Name = "btncloupdate";
             this.btncloupdate.Size = new System.Drawing.Size(115, 36);
             this.btncloupdate.TabIndex = 9;
@@ -253,12 +255,33 @@
             this.btncloupdate.UseVisualStyleBackColor = true;
             this.btncloupdate.Click += new System.EventHandler(this.btncloupdate_Click);
             // 
+            // TextID
+            // 
+            this.TextID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TextID.Location = new System.Drawing.Point(710, 113);
+            this.TextID.Name = "TextID";
+            this.TextID.Size = new System.Drawing.Size(235, 26);
+            this.TextID.TabIndex = 13;
+            this.TextID.TextChanged += new System.EventHandler(this.TextID_TextChanged);
+            // 
+            // LabelID
+            // 
+            this.LabelID.AutoSize = true;
+            this.LabelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.LabelID.Location = new System.Drawing.Point(670, 112);
+            this.LabelID.Name = "LabelID";
+            this.LabelID.Size = new System.Drawing.Size(34, 26);
+            this.LabelID.TabIndex = 12;
+            this.LabelID.Text = "ID";
+            // 
             // CLO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(984, 701);
+            this.Controls.Add(this.TextID);
+            this.Controls.Add(this.LabelID);
             this.Controls.Add(this.btncloadd);
             this.Controls.Add(this.btnclodelete);
             this.Controls.Add(this.btncloupdate);
@@ -271,6 +294,7 @@
             this.Name = "CLO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CLO";
+            this.Load += new System.EventHandler(this.CLO_Load);
             this.SideNav.ResumeLayout(false);
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
@@ -298,5 +322,7 @@
         private System.Windows.Forms.Button btncloadd;
         private System.Windows.Forms.Button btnStudentResult;
         private System.Windows.Forms.Button btncloupdate;
+        private System.Windows.Forms.TextBox TextID;
+        private System.Windows.Forms.Label LabelID;
     }
 }

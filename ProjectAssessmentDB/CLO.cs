@@ -150,6 +150,7 @@ namespace ProjectAssessmentDB
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
+                TextID.Text = row.Cells[0].Value.ToString();
                 txtcloname.Text = row.Cells[1].Value.ToString();
 
             }
@@ -163,16 +164,25 @@ namespace ProjectAssessmentDB
 
                 if (connection.State == ConnectionState.Open)
                 {
-                    string query = "UPDATE Clo SET Name = @Name, DateUpdated = @DateUpdated WHERE Id = (SELECT Id FROM Clo WHERE Name = @Name)";
+                    string query = "UPDATE Clo SET Name = @Name,DateUpdated = @DateUpdated WHERE Id= @Id";
                     SqlCommand command = new SqlCommand(query, connection);
 
                     command.Parameters.Add(new SqlParameter("@Name", txtcloname.Text));
+                    command.Parameters.Add(new SqlParameter("@Id", TextID.Text));
                     command.Parameters.Add(new SqlParameter("@DateUpdated", DateTime.Today.Date));
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Clo Updated Successfully");
-                    RefreshGrid();
-                    txtcloname.Text = "";
+
+                    int rowsAffected = command.ExecuteNonQuery();   
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("CLO Updated Successfully");
+                        RefreshGrid();
+                        txtcloname.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching CLO found to update.");
+                    }
 
                     connection.Close();
                 }
@@ -197,10 +207,12 @@ namespace ProjectAssessmentDB
 
                     if (connection.State == ConnectionState.Open)
                     {
-                        string query = "DELETE FROM Student WHERE Id = (SELECT Id FROM Student WHERE FirstName = @FirstName AND LastName = @LastName AND Email = @Email AND Contact = @Contact AND RegistrationNumber = @RegistrationNumber)";
+                        string query = "DELETE FROM Clo WHERE Id = (SELECT Id FROM Clo WHERE Name = @Name )";
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
-                            command.Parameters.Add(new SqlParameter("@FirstName", txtcloname.Text));
+                            command.Parameters.Add(new SqlParameter("@Name", txtcloname.Text));
+
+
                             int rowsAffected = command.ExecuteNonQuery();
 
                             if (rowsAffected > 0)
@@ -226,6 +238,16 @@ namespace ProjectAssessmentDB
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void TextID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CLO_Load(object sender, EventArgs e)
+        {
+            RefreshGrid();
         }
     }
 }
