@@ -41,9 +41,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelcloname = new System.Windows.Forms.Label();
             this.txtcloname = new System.Windows.Forms.TextBox();
-            this.btncloupdate = new System.Windows.Forms.Button();
             this.btnclodelete = new System.Windows.Forms.Button();
             this.btncloadd = new System.Windows.Forms.Button();
+            this.btncloupdate = new System.Windows.Forms.Button();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -197,6 +197,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(404, 330);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // labelcloname
             // 
@@ -218,16 +220,6 @@
             this.txtcloname.TabIndex = 8;
             this.txtcloname.TextChanged += new System.EventHandler(this.txtcloname_TextChanged);
             // 
-            // btncloupdate
-            // 
-            this.btncloupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btncloupdate.Location = new System.Drawing.Point(388, 193);
-            this.btncloupdate.Name = "btncloupdate";
-            this.btncloupdate.Size = new System.Drawing.Size(115, 36);
-            this.btncloupdate.TabIndex = 9;
-            this.btncloupdate.Text = "Update";
-            this.btncloupdate.UseVisualStyleBackColor = true;
-            // 
             // btnclodelete
             // 
             this.btnclodelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
@@ -237,16 +229,29 @@
             this.btnclodelete.TabIndex = 10;
             this.btnclodelete.Text = "Delete";
             this.btnclodelete.UseVisualStyleBackColor = true;
+            this.btnclodelete.Click += new System.EventHandler(this.btnclodelete_Click);
             // 
             // btncloadd
             // 
             this.btncloadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btncloadd.Location = new System.Drawing.Point(267, 195);
+            this.btncloadd.Location = new System.Drawing.Point(267, 193);
             this.btncloadd.Name = "btncloadd";
-            this.btncloadd.Size = new System.Drawing.Size(115, 34);
+            this.btncloadd.Size = new System.Drawing.Size(115, 36);
             this.btncloadd.TabIndex = 11;
             this.btncloadd.Text = "Add";
             this.btncloadd.UseVisualStyleBackColor = true;
+            this.btncloadd.Click += new System.EventHandler(this.btncloadd_Click);
+            // 
+            // btncloupdate
+            // 
+            this.btncloupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btncloupdate.Location = new System.Drawing.Point(388, 193);
+            this.btncloupdate.Name = "btncloupdate";
+            this.btncloupdate.Size = new System.Drawing.Size(115, 36);
+            this.btncloupdate.TabIndex = 9;
+            this.btncloupdate.Text = "Update";
+            this.btncloupdate.UseVisualStyleBackColor = true;
+            this.btncloupdate.Click += new System.EventHandler(this.btncloupdate_Click);
             // 
             // CLO
             // 
@@ -289,9 +294,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelcloname;
         private System.Windows.Forms.TextBox txtcloname;
-        private System.Windows.Forms.Button btncloupdate;
         private System.Windows.Forms.Button btnclodelete;
         private System.Windows.Forms.Button btncloadd;
         private System.Windows.Forms.Button btnStudentResult;
+        private System.Windows.Forms.Button btncloupdate;
     }
 }
