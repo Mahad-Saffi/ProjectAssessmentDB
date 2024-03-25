@@ -49,24 +49,24 @@
             this.projectBDataSet3 = new ProjectAssessmentDB.ProjectBDataSet3();
             this.cloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cloIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rubricBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectBDataSet1 = new ProjectAssessmentDB.ProjectBDataSet1();
             this.buttonAddRubric = new System.Windows.Forms.Button();
             this.btnUpdateRubric = new System.Windows.Forms.Button();
             this.btnDeleteRubric = new System.Windows.Forms.Button();
             this.cloTableAdapter = new ProjectAssessmentDB.ProjectBDataSet3TableAdapters.CloTableAdapter();
-            this.projectBDataSet1 = new ProjectAssessmentDB.ProjectBDataSet1();
-            this.rubricBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rubricTableAdapter = new ProjectAssessmentDB.ProjectBDataSet1TableAdapters.RubricTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cloIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpperPanel.SuspendLayout();
             this.SideNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // UpperPanel
@@ -138,6 +138,7 @@
             this.btnStudentResult.TabIndex = 7;
             this.btnStudentResult.Text = "Manage Student Result";
             this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // btnmanagerubriclevel
             // 
@@ -151,6 +152,7 @@
             this.btnmanagerubriclevel.TabIndex = 5;
             this.btnmanagerubriclevel.Text = "Manage Rubric Level";
             this.btnmanagerubriclevel.UseVisualStyleBackColor = false;
+            this.btnmanagerubriclevel.Click += new System.EventHandler(this.btnmanagerubriclevel_Click);
             // 
             // btnmanageassessment
             // 
@@ -164,6 +166,7 @@
             this.btnmanageassessment.TabIndex = 4;
             this.btnmanageassessment.Text = "Manage Assessment";
             this.btnmanageassessment.UseVisualStyleBackColor = false;
+            this.btnmanageassessment.Click += new System.EventHandler(this.btnmanageassessment_Click);
             // 
             // btnmanagerubrics
             // 
@@ -177,6 +180,7 @@
             this.btnmanagerubrics.TabIndex = 3;
             this.btnmanagerubrics.Text = "Manage Rubrics";
             this.btnmanagerubrics.UseVisualStyleBackColor = false;
+            this.btnmanagerubrics.Click += new System.EventHandler(this.btnmanagerubrics_Click);
             // 
             // btnmanageclo
             // 
@@ -190,6 +194,7 @@
             this.btnmanageclo.TabIndex = 2;
             this.btnmanageclo.Text = "Manage CLO";
             this.btnmanageclo.UseVisualStyleBackColor = false;
+            this.btnmanageclo.Click += new System.EventHandler(this.btnmanageclo_Click);
             // 
             // btnmanagestudent
             // 
@@ -203,6 +208,7 @@
             this.btnmanagestudent.TabIndex = 1;
             this.btnmanagestudent.Text = "Manage Student";
             this.btnmanagestudent.UseVisualStyleBackColor = false;
+            this.btnmanagestudent.Click += new System.EventHandler(this.btnmanagestudent_Click);
             // 
             // labelCLOId
             // 
@@ -297,6 +303,37 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // detailsDataGridViewTextBoxColumn
+            // 
+            this.detailsDataGridViewTextBoxColumn.DataPropertyName = "Details";
+            this.detailsDataGridViewTextBoxColumn.HeaderText = "Details";
+            this.detailsDataGridViewTextBoxColumn.Name = "detailsDataGridViewTextBoxColumn";
+            this.detailsDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // cloIdDataGridViewTextBoxColumn
+            // 
+            this.cloIdDataGridViewTextBoxColumn.DataPropertyName = "CloId";
+            this.cloIdDataGridViewTextBoxColumn.HeaderText = "CloId";
+            this.cloIdDataGridViewTextBoxColumn.Name = "cloIdDataGridViewTextBoxColumn";
+            this.cloIdDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // rubricBindingSource
+            // 
+            this.rubricBindingSource.DataMember = "Rubric";
+            this.rubricBindingSource.DataSource = this.projectBDataSet1;
+            // 
+            // projectBDataSet1
+            // 
+            this.projectBDataSet1.DataSetName = "ProjectBDataSet1";
+            this.projectBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // buttonAddRubric
             // 
             this.buttonAddRubric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -334,40 +371,9 @@
             // 
             this.cloTableAdapter.ClearBeforeFill = true;
             // 
-            // projectBDataSet1
-            // 
-            this.projectBDataSet1.DataSetName = "ProjectBDataSet1";
-            this.projectBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rubricBindingSource
-            // 
-            this.rubricBindingSource.DataMember = "Rubric";
-            this.rubricBindingSource.DataSource = this.projectBDataSet1;
-            // 
             // rubricTableAdapter
             // 
             this.rubricTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // detailsDataGridViewTextBoxColumn
-            // 
-            this.detailsDataGridViewTextBoxColumn.DataPropertyName = "Details";
-            this.detailsDataGridViewTextBoxColumn.HeaderText = "Details";
-            this.detailsDataGridViewTextBoxColumn.Name = "detailsDataGridViewTextBoxColumn";
-            this.detailsDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // cloIdDataGridViewTextBoxColumn
-            // 
-            this.cloIdDataGridViewTextBoxColumn.DataPropertyName = "CloId";
-            this.cloIdDataGridViewTextBoxColumn.HeaderText = "CloId";
-            this.cloIdDataGridViewTextBoxColumn.Name = "cloIdDataGridViewTextBoxColumn";
-            this.cloIdDataGridViewTextBoxColumn.Width = 130;
             // 
             // Rubric
             // 
@@ -397,8 +403,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cloBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

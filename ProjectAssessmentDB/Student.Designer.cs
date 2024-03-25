@@ -410,6 +410,7 @@
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(139, 28);
             this.comboStatus.TabIndex = 15;
+            this.comboStatus.SelectedIndexChanged += new System.EventHandler(this.comboStatus_SelectedIndexChanged);
             // 
             // button1
             // 

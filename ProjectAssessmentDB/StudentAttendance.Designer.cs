@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnmanagerubriclevel = new System.Windows.Forms.Button();
             this.btnmanageassessment = new System.Windows.Forms.Button();
             this.SideNav = new System.Windows.Forms.Panel();
+            this.btnStudentResult = new System.Windows.Forms.Button();
             this.btnmanagerubrics = new System.Windows.Forms.Button();
             this.btnmanageclo = new System.Windows.Forms.Button();
             this.btnmanagestudent = new System.Windows.Forms.Button();
@@ -41,12 +43,21 @@
             this.labrlttendancedate = new System.Windows.Forms.Label();
             this.labelattendancestatus = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboStatusAttendance = new System.Windows.Forms.ComboBox();
             this.btnattendancesave = new System.Windows.Forms.Button();
-            this.btnStudentResult = new System.Windows.Forms.Button();
+            this.projectBDataSet7 = new ProjectAssessmentDB.ProjectBDataSet7();
+            this.studentAttendanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentAttendanceTableAdapter = new ProjectAssessmentDB.ProjectBDataSet7TableAdapters.StudentAttendanceTableAdapter();
+            this.attendanceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attendanceStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelStudentIdAttendance = new System.Windows.Forms.Label();
+            this.txtStudentIdAttendance = new System.Windows.Forms.TextBox();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentAttendanceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnmanagerubriclevel
@@ -92,6 +103,20 @@
             this.SideNav.Name = "SideNav";
             this.SideNav.Size = new System.Drawing.Size(240, 721);
             this.SideNav.TabIndex = 2;
+            // 
+            // btnStudentResult
+            // 
+            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStudentResult.FlatAppearance.BorderSize = 0;
+            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
+            this.btnStudentResult.Name = "btnStudentResult";
+            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
+            this.btnStudentResult.TabIndex = 7;
+            this.btnStudentResult.Text = "Manage Student Result";
+            this.btnStudentResult.UseVisualStyleBackColor = false;
+            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
             // 
             // btnmanagerubrics
             // 
@@ -178,17 +203,25 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(267, 94);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.attendanceIdDataGridViewTextBoxColumn,
+            this.studentIdDataGridViewTextBoxColumn,
+            this.attendanceStatusDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.studentAttendanceBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(289, 140);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(332, 523);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 523);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // labrlttendancedate
             // 
             this.labrlttendancedate.AutoSize = true;
             this.labrlttendancedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.labrlttendancedate.Location = new System.Drawing.Point(639, 146);
+            this.labrlttendancedate.Location = new System.Drawing.Point(654, 164);
             this.labrlttendancedate.Name = "labrlttendancedate";
             this.labrlttendancedate.Size = new System.Drawing.Size(76, 31);
             this.labrlttendancedate.TabIndex = 5;
@@ -198,7 +231,7 @@
             // 
             this.labelattendancestatus.AutoSize = true;
             this.labelattendancestatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.labelattendancestatus.Location = new System.Drawing.Point(639, 283);
+            this.labelattendancestatus.Location = new System.Drawing.Point(654, 258);
             this.labelattendancestatus.Name = "labelattendancestatus";
             this.labelattendancestatus.Size = new System.Drawing.Size(98, 31);
             this.labelattendancestatus.TabIndex = 6;
@@ -207,24 +240,26 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(745, 154);
+            this.dateTimePicker1.Location = new System.Drawing.Point(745, 172);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(227, 23);
             this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // comboBox1
+            // comboStatusAttendance
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboStatusAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.comboStatusAttendance.FormattingEnabled = true;
+            this.comboStatusAttendance.Items.AddRange(new object[] {
             "Present",
             "Absent",
             "Leave",
             "Late"});
-            this.comboBox1.Location = new System.Drawing.Point(745, 288);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 8;
+            this.comboStatusAttendance.Location = new System.Drawing.Point(758, 266);
+            this.comboStatusAttendance.Name = "comboStatusAttendance";
+            this.comboStatusAttendance.Size = new System.Drawing.Size(121, 26);
+            this.comboStatusAttendance.TabIndex = 8;
+            this.comboStatusAttendance.SelectedIndexChanged += new System.EventHandler(this.comboStatusAttendance_SelectedIndexChanged);
             // 
             // btnattendancesave
             // 
@@ -232,34 +267,73 @@
             this.btnattendancesave.FlatAppearance.BorderSize = 0;
             this.btnattendancesave.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnattendancesave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnattendancesave.Location = new System.Drawing.Point(745, 424);
+            this.btnattendancesave.Location = new System.Drawing.Point(808, 432);
             this.btnattendancesave.Name = "btnattendancesave";
             this.btnattendancesave.Size = new System.Drawing.Size(80, 38);
             this.btnattendancesave.TabIndex = 9;
             this.btnattendancesave.Text = "Save";
             this.btnattendancesave.UseVisualStyleBackColor = false;
+            this.btnattendancesave.Click += new System.EventHandler(this.btnattendancesave_Click);
             // 
-            // btnStudentResult
+            // projectBDataSet7
             // 
-            this.btnStudentResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.btnStudentResult.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStudentResult.FlatAppearance.BorderSize = 0;
-            this.btnStudentResult.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudentResult.Location = new System.Drawing.Point(0, 415);
-            this.btnStudentResult.Name = "btnStudentResult";
-            this.btnStudentResult.Size = new System.Drawing.Size(240, 55);
-            this.btnStudentResult.TabIndex = 7;
-            this.btnStudentResult.Text = "Manage Student Result";
-            this.btnStudentResult.UseVisualStyleBackColor = false;
-            this.btnStudentResult.Click += new System.EventHandler(this.btnStudentResult_Click);
+            this.projectBDataSet7.DataSetName = "ProjectBDataSet7";
+            this.projectBDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentAttendanceBindingSource
+            // 
+            this.studentAttendanceBindingSource.DataMember = "StudentAttendance";
+            this.studentAttendanceBindingSource.DataSource = this.projectBDataSet7;
+            // 
+            // studentAttendanceTableAdapter
+            // 
+            this.studentAttendanceTableAdapter.ClearBeforeFill = true;
+            // 
+            // attendanceIdDataGridViewTextBoxColumn
+            // 
+            this.attendanceIdDataGridViewTextBoxColumn.DataPropertyName = "AttendanceId";
+            this.attendanceIdDataGridViewTextBoxColumn.HeaderText = "AttendanceId";
+            this.attendanceIdDataGridViewTextBoxColumn.Name = "attendanceIdDataGridViewTextBoxColumn";
+            // 
+            // studentIdDataGridViewTextBoxColumn
+            // 
+            this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "StudentId";
+            this.studentIdDataGridViewTextBoxColumn.HeaderText = "StudentId";
+            this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
+            // 
+            // attendanceStatusDataGridViewTextBoxColumn
+            // 
+            this.attendanceStatusDataGridViewTextBoxColumn.DataPropertyName = "AttendanceStatus";
+            this.attendanceStatusDataGridViewTextBoxColumn.HeaderText = "AttendanceStatus";
+            this.attendanceStatusDataGridViewTextBoxColumn.Name = "attendanceStatusDataGridViewTextBoxColumn";
+            // 
+            // labelStudentIdAttendance
+            // 
+            this.labelStudentIdAttendance.AutoSize = true;
+            this.labelStudentIdAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.labelStudentIdAttendance.Location = new System.Drawing.Point(654, 360);
+            this.labelStudentIdAttendance.Name = "labelStudentIdAttendance";
+            this.labelStudentIdAttendance.Size = new System.Drawing.Size(148, 31);
+            this.labelStudentIdAttendance.TabIndex = 10;
+            this.labelStudentIdAttendance.Text = "Student Id";
+            // 
+            // txtStudentIdAttendance
+            // 
+            this.txtStudentIdAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtStudentIdAttendance.Location = new System.Drawing.Point(808, 365);
+            this.txtStudentIdAttendance.Name = "txtStudentIdAttendance";
+            this.txtStudentIdAttendance.Size = new System.Drawing.Size(100, 26);
+            this.txtStudentIdAttendance.TabIndex = 11;
             // 
             // StudentAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 721);
+            this.Controls.Add(this.txtStudentIdAttendance);
+            this.Controls.Add(this.labelStudentIdAttendance);
             this.Controls.Add(this.btnattendancesave);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboStatusAttendance);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.labelattendancestatus);
             this.Controls.Add(this.labrlttendancedate);
@@ -275,6 +349,8 @@
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentAttendanceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,8 +371,16 @@
         private System.Windows.Forms.Label labrlttendancedate;
         private System.Windows.Forms.Label labelattendancestatus;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboStatusAttendance;
         private System.Windows.Forms.Button btnattendancesave;
         private System.Windows.Forms.Button btnStudentResult;
+        private ProjectBDataSet7 projectBDataSet7;
+        private System.Windows.Forms.BindingSource studentAttendanceBindingSource;
+        private ProjectBDataSet7TableAdapters.StudentAttendanceTableAdapter studentAttendanceTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attendanceIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attendanceStatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label labelStudentIdAttendance;
+        private System.Windows.Forms.TextBox txtStudentIdAttendance;
     }
 }

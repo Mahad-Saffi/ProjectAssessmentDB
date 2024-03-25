@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ProjectAssessmentDB
 {
     public partial class StudentAttendance : Form
     {
+        string connectionString = ConnString.connectionString;
         public StudentAttendance()
         {
             InitializeComponent();
@@ -19,6 +21,8 @@ namespace ProjectAssessmentDB
 
         private void StudentAttendance_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectBDataSet7.StudentAttendance' table. You can move, or remove it, as needed.
+            this.studentAttendanceTableAdapter.Fill(this.projectBDataSet7.StudentAttendance);
 
         }
 
@@ -70,5 +74,139 @@ namespace ProjectAssessmentDB
             studentResult.Show();
             this.Hide();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void LoadDataIntoGrid()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT * FROM Student";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnattendancesave_Click(object sender, EventArgs e)
+        {
+            InsertDateIntoAttendanceClass();
+            InsertAttendance(sender, e);
+            
+        }
+
+        private void InsertDateIntoAttendanceClass()
+        {
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(ConnString.connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO ClassAttendance(AttendanceDate) VALUES(@AttendanceDate)";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@AttendanceDate", dateTimePicker1.Value.Date);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void InsertAttendance(object sender, EventArgs e)
+        {
+            int temp = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    if (comboStatusAttendance.Text == "Present")
+                    {
+                        temp = 1;
+                    }
+                    else if (comboStatusAttendance.Text == "Absent")
+                    {
+                        temp = 2;
+                    }
+                    else if (comboStatusAttendance.Text == "Leave")
+                    {
+                        temp = 3;
+                    }
+                    else if (comboStatusAttendance.Text == "Late")
+                    {
+                        temp = 4;
+                    }
+        
+                    string query = "Insert INTO StudentAttendance(StudentId,AttendanceId,AttendanceStatus) VALUES(@StudentId,@AttendanceId,@AttendanceStatus)";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@StudentId", txtStudentIdAttendance.Text);
+                    command.Parameters.AddWithValue("@AttendanceId", GetAttendanceId());
+                    command.Parameters.AddWithValue("@AttendanceStatus", temp);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Attendance Saved Successfully");
+                    StudentAttendance_Load(sender, e);
+                    
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private int GetAttendanceId()
+        {
+            int id = 0;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT Id FROM ClassAttendance WHERE AttendanceDate = @AttendanceDate";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@AttendanceDate", dateTimePicker1.Value.Date);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    id = Convert.ToInt32(reader["Id"]);
+                }
+                connection.Close();
+            }
+            return id;
+        }
+
+        private void comboStatusAttendance_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
+
 }

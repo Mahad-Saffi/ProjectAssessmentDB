@@ -129,5 +129,45 @@ namespace ProjectAssessmentDB
                 Rubric_Load(sender, e);
             }
         }
+
+        private void btnmanagestudent_Click(object sender, EventArgs e)
+        {
+            Student std = new Student();
+            std.Show();
+            this.Hide();
+        }
+
+        private void btnmanageclo_Click(object sender, EventArgs e)
+        {
+            CLO cLO = new CLO();
+            cLO.Show();
+            this.Hide();
+        }
+
+        private void btnmanagerubrics_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnmanageassessment_Click(object sender, EventArgs e)
+        {
+            ManageAssessments manageAssessments = new ManageAssessments();
+            manageAssessments.Show();
+            this.Hide();
+        }
+
+        private void btnmanagerubriclevel_Click(object sender, EventArgs e)
+        {
+            RubricLevel rubricLevel = new RubricLevel();
+            rubricLevel.Show();
+            this.Hide();
+        }
+
+        private void btnStudentResult_Click(object sender, EventArgs e)
+        {
+            StudentResult studentResult = new StudentResult();
+            studentResult.Show();
+            this.Hide();
+        }
     }
 }
