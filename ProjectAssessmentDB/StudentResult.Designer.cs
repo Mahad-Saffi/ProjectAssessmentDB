@@ -45,8 +45,9 @@
             this.labelRubricDetail__Result = new System.Windows.Forms.Label();
             this.labelRubricLevel__Result = new System.Windows.Forms.Label();
             this.labelRubricLevelId__Result = new System.Windows.Forms.Label();
-            this.labelDate__Result = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectBDataSet8 = new ProjectAssessmentDB.ProjectBDataSet8();
             this.button1 = new System.Windows.Forms.Button();
             this.comboStudent = new System.Windows.Forms.ComboBox();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -64,26 +65,25 @@
             this.rubricLevelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectBDataSet6 = new ProjectAssessmentDB.ProjectBDataSet6();
             this.comboRubricLevelId = new System.Windows.Forms.ComboBox();
-            this.dateTimePickerStudentResult = new System.Windows.Forms.DateTimePicker();
             this.studentTableAdapter = new ProjectAssessmentDB.ProjectBDataSet2TableAdapters.StudentTableAdapter();
             this.assessmentTableAdapter = new ProjectAssessmentDB.ProjectBDataSetTableAdapters.AssessmentTableAdapter();
             this.assessmentComponentTableAdapter = new ProjectAssessmentDB.ProjectBDataSet5TableAdapters.AssessmentComponentTableAdapter();
             this.rubricTableAdapter = new ProjectAssessmentDB.ProjectBDataSet1TableAdapters.RubricTableAdapter();
             this.rubricLevelTableAdapter = new ProjectAssessmentDB.ProjectBDataSet6TableAdapters.RubricLevelTableAdapter();
-            this.projectBDataSet8 = new ProjectAssessmentDB.ProjectBDataSet8();
-            this.studentResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentResultTableAdapter = new ProjectAssessmentDB.ProjectBDataSet8TableAdapters.StudentResultTableAdapter();
             this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assessmentComponentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rubricMeasurementIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evaluationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MarksObtained = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Assessment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RubricDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RubricLevelId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ObtainedMarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).BeginInit();
@@ -94,8 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SideNav
@@ -299,16 +297,6 @@
             this.labelRubricLevelId__Result.TabIndex = 9;
             this.labelRubricLevelId__Result.Text = "Rubric Level Id";
             // 
-            // labelDate__Result
-            // 
-            this.labelDate__Result.AutoSize = true;
-            this.labelDate__Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.labelDate__Result.Location = new System.Drawing.Point(319, 323);
-            this.labelDate__Result.Name = "labelDate__Result";
-            this.labelDate__Result.Size = new System.Drawing.Size(48, 22);
-            this.labelDate__Result.TabIndex = 10;
-            this.labelDate__Result.Text = "Date";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -318,26 +306,38 @@
             this.assessmentComponentIdDataGridViewTextBoxColumn,
             this.rubricMeasurementIdDataGridViewTextBoxColumn,
             this.evaluationDateDataGridViewTextBoxColumn,
-            this.MarksObtained,
             this.Assessment,
             this.RubricDetail,
-            this.RubricLevelId});
+            this.RubricLevelId,
+            this.ObtainedMarks});
             this.dataGridView1.DataSource = this.studentResultBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(265, 398);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(696, 311);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // studentResultBindingSource
+            // 
+            this.studentResultBindingSource.DataMember = "StudentResult";
+            this.studentResultBindingSource.DataSource = this.projectBDataSet8;
+            // 
+            // projectBDataSet8
+            // 
+            this.projectBDataSet8.DataSetName = "ProjectBDataSet8";
+            this.projectBDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.button1.Location = new System.Drawing.Point(680, 312);
+            this.button1.Location = new System.Drawing.Point(323, 308);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 33);
+            this.button1.Size = new System.Drawing.Size(140, 52);
             this.button1.TabIndex = 13;
             this.button1.Text = "Evaluate";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboStudent
             // 
@@ -467,15 +467,6 @@
             this.comboRubricLevelId.TabIndex = 19;
             this.comboRubricLevelId.ValueMember = "Id";
             // 
-            // dateTimePickerStudentResult
-            // 
-            this.dateTimePickerStudentResult.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePickerStudentResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePickerStudentResult.Location = new System.Drawing.Point(395, 323);
-            this.dateTimePickerStudentResult.Name = "dateTimePickerStudentResult";
-            this.dateTimePickerStudentResult.Size = new System.Drawing.Size(227, 23);
-            this.dateTimePickerStudentResult.TabIndex = 20;
-            // 
             // studentTableAdapter
             // 
             this.studentTableAdapter.ClearBeforeFill = true;
@@ -496,16 +487,6 @@
             // 
             this.rubricLevelTableAdapter.ClearBeforeFill = true;
             // 
-            // projectBDataSet8
-            // 
-            this.projectBDataSet8.DataSetName = "ProjectBDataSet8";
-            this.projectBDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentResultBindingSource
-            // 
-            this.studentResultBindingSource.DataMember = "StudentResult";
-            this.studentResultBindingSource.DataSource = this.projectBDataSet8;
-            // 
             // studentResultTableAdapter
             // 
             this.studentResultTableAdapter.ClearBeforeFill = true;
@@ -513,14 +494,16 @@
             // studentIdDataGridViewTextBoxColumn
             // 
             this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "StudentId";
-            this.studentIdDataGridViewTextBoxColumn.HeaderText = "StudentId";
+            this.studentIdDataGridViewTextBoxColumn.HeaderText = "StuID";
             this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
+            this.studentIdDataGridViewTextBoxColumn.Width = 40;
             // 
             // assessmentComponentIdDataGridViewTextBoxColumn
             // 
             this.assessmentComponentIdDataGridViewTextBoxColumn.DataPropertyName = "AssessmentComponentId";
-            this.assessmentComponentIdDataGridViewTextBoxColumn.HeaderText = "AssessmentComponentId";
+            this.assessmentComponentIdDataGridViewTextBoxColumn.HeaderText = "AssesComponentId";
             this.assessmentComponentIdDataGridViewTextBoxColumn.Name = "assessmentComponentIdDataGridViewTextBoxColumn";
+            this.assessmentComponentIdDataGridViewTextBoxColumn.Width = 80;
             // 
             // rubricMeasurementIdDataGridViewTextBoxColumn
             // 
@@ -533,12 +516,6 @@
             this.evaluationDateDataGridViewTextBoxColumn.DataPropertyName = "EvaluationDate";
             this.evaluationDateDataGridViewTextBoxColumn.HeaderText = "EvaluationDate";
             this.evaluationDateDataGridViewTextBoxColumn.Name = "evaluationDateDataGridViewTextBoxColumn";
-            // 
-            // MarksObtained
-            // 
-            this.MarksObtained.DataPropertyName = "StudentId";
-            this.MarksObtained.HeaderText = "Marks Obtained";
-            this.MarksObtained.Name = "MarksObtained";
             // 
             // Assessment
             // 
@@ -557,13 +534,19 @@
             this.RubricLevelId.DataPropertyName = "StudentId";
             this.RubricLevelId.HeaderText = "Rubric Level Id";
             this.RubricLevelId.Name = "RubricLevelId";
+            this.RubricLevelId.Width = 60;
+            // 
+            // ObtainedMarks
+            // 
+            this.ObtainedMarks.DataPropertyName = "StudentId";
+            this.ObtainedMarks.HeaderText = "Obtained Marks";
+            this.ObtainedMarks.Name = "ObtainedMarks";
             // 
             // StudentResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 701);
-            this.Controls.Add(this.dateTimePickerStudentResult);
             this.Controls.Add(this.comboRubricLevelId);
             this.Controls.Add(this.comboRubricLevel);
             this.Controls.Add(this.comboRubricDetail);
@@ -572,7 +555,6 @@
             this.Controls.Add(this.comboStudent);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.labelDate__Result);
             this.Controls.Add(this.labelRubricLevelId__Result);
             this.Controls.Add(this.labelRubricLevel__Result);
             this.Controls.Add(this.labelRubricDetail__Result);
@@ -590,6 +572,8 @@
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).EndInit();
@@ -600,8 +584,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rubricLevelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentResultBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,7 +607,6 @@
         private System.Windows.Forms.Label labelRubricDetail__Result;
         private System.Windows.Forms.Label labelRubricLevel__Result;
         private System.Windows.Forms.Label labelRubricLevelId__Result;
-        private System.Windows.Forms.Label labelDate__Result;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboStudent;
@@ -634,7 +615,6 @@
         private System.Windows.Forms.ComboBox comboRubricDetail;
         private System.Windows.Forms.ComboBox comboRubricLevel;
         private System.Windows.Forms.ComboBox comboRubricLevelId;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStudentResult;
         private ProjectBDataSet2 projectBDataSet2;
         private System.Windows.Forms.BindingSource studentBindingSource;
         private ProjectBDataSet2TableAdapters.StudentTableAdapter studentTableAdapter;
@@ -657,9 +637,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn assessmentComponentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rubricMeasurementIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn evaluationDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MarksObtained;
         private System.Windows.Forms.DataGridViewTextBoxColumn Assessment;
         private System.Windows.Forms.DataGridViewTextBoxColumn RubricDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn RubricLevelId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObtainedMarks;
     }
 }

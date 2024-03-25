@@ -429,7 +429,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10F, System.Drawing.FontStyle.Bold);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.button2.Location = new System.Drawing.Point(258, 250);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 40);

@@ -40,24 +40,29 @@
             this.UpperPanel = new System.Windows.Forms.Panel();
             this.UpperNavText = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.attendanceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attendanceStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentAttendanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectBDataSet7 = new ProjectAssessmentDB.ProjectBDataSet7();
             this.labrlttendancedate = new System.Windows.Forms.Label();
             this.labelattendancestatus = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboStatusAttendance = new System.Windows.Forms.ComboBox();
             this.btnattendancesave = new System.Windows.Forms.Button();
-            this.projectBDataSet7 = new ProjectAssessmentDB.ProjectBDataSet7();
-            this.studentAttendanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentAttendanceTableAdapter = new ProjectAssessmentDB.ProjectBDataSet7TableAdapters.StudentAttendanceTableAdapter();
-            this.attendanceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.attendanceStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelStudentIdAttendance = new System.Windows.Forms.Label();
-            this.txtStudentIdAttendance = new System.Windows.Forms.TextBox();
+            this.comboStudentId = new System.Windows.Forms.ComboBox();
+            this.projectBDataSet2 = new ProjectAssessmentDB.ProjectBDataSet2();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableAdapter = new ProjectAssessmentDB.ProjectBDataSet2TableAdapters.StudentTableAdapter();
             this.SideNav.SuspendLayout();
             this.UpperPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentAttendanceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnmanagerubriclevel
@@ -217,6 +222,34 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // attendanceIdDataGridViewTextBoxColumn
+            // 
+            this.attendanceIdDataGridViewTextBoxColumn.DataPropertyName = "AttendanceId";
+            this.attendanceIdDataGridViewTextBoxColumn.HeaderText = "AttendanceId";
+            this.attendanceIdDataGridViewTextBoxColumn.Name = "attendanceIdDataGridViewTextBoxColumn";
+            // 
+            // studentIdDataGridViewTextBoxColumn
+            // 
+            this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "StudentId";
+            this.studentIdDataGridViewTextBoxColumn.HeaderText = "StudentId";
+            this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
+            // 
+            // attendanceStatusDataGridViewTextBoxColumn
+            // 
+            this.attendanceStatusDataGridViewTextBoxColumn.DataPropertyName = "AttendanceStatus";
+            this.attendanceStatusDataGridViewTextBoxColumn.HeaderText = "AttendanceStatus";
+            this.attendanceStatusDataGridViewTextBoxColumn.Name = "attendanceStatusDataGridViewTextBoxColumn";
+            // 
+            // studentAttendanceBindingSource
+            // 
+            this.studentAttendanceBindingSource.DataMember = "StudentAttendance";
+            this.studentAttendanceBindingSource.DataSource = this.projectBDataSet7;
+            // 
+            // projectBDataSet7
+            // 
+            this.projectBDataSet7.DataSetName = "ProjectBDataSet7";
+            this.projectBDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // labrlttendancedate
             // 
             this.labrlttendancedate.AutoSize = true;
@@ -275,37 +308,9 @@
             this.btnattendancesave.UseVisualStyleBackColor = false;
             this.btnattendancesave.Click += new System.EventHandler(this.btnattendancesave_Click);
             // 
-            // projectBDataSet7
-            // 
-            this.projectBDataSet7.DataSetName = "ProjectBDataSet7";
-            this.projectBDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentAttendanceBindingSource
-            // 
-            this.studentAttendanceBindingSource.DataMember = "StudentAttendance";
-            this.studentAttendanceBindingSource.DataSource = this.projectBDataSet7;
-            // 
             // studentAttendanceTableAdapter
             // 
             this.studentAttendanceTableAdapter.ClearBeforeFill = true;
-            // 
-            // attendanceIdDataGridViewTextBoxColumn
-            // 
-            this.attendanceIdDataGridViewTextBoxColumn.DataPropertyName = "AttendanceId";
-            this.attendanceIdDataGridViewTextBoxColumn.HeaderText = "AttendanceId";
-            this.attendanceIdDataGridViewTextBoxColumn.Name = "attendanceIdDataGridViewTextBoxColumn";
-            // 
-            // studentIdDataGridViewTextBoxColumn
-            // 
-            this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "StudentId";
-            this.studentIdDataGridViewTextBoxColumn.HeaderText = "StudentId";
-            this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
-            // 
-            // attendanceStatusDataGridViewTextBoxColumn
-            // 
-            this.attendanceStatusDataGridViewTextBoxColumn.DataPropertyName = "AttendanceStatus";
-            this.attendanceStatusDataGridViewTextBoxColumn.HeaderText = "AttendanceStatus";
-            this.attendanceStatusDataGridViewTextBoxColumn.Name = "attendanceStatusDataGridViewTextBoxColumn";
             // 
             // labelStudentIdAttendance
             // 
@@ -317,20 +322,39 @@
             this.labelStudentIdAttendance.TabIndex = 10;
             this.labelStudentIdAttendance.Text = "Student Id";
             // 
-            // txtStudentIdAttendance
+            // comboStudentId
             // 
-            this.txtStudentIdAttendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtStudentIdAttendance.Location = new System.Drawing.Point(808, 365);
-            this.txtStudentIdAttendance.Name = "txtStudentIdAttendance";
-            this.txtStudentIdAttendance.Size = new System.Drawing.Size(100, 26);
-            this.txtStudentIdAttendance.TabIndex = 11;
+            this.comboStudentId.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.studentBindingSource, "Id", true));
+            this.comboStudentId.DataSource = this.studentBindingSource;
+            this.comboStudentId.DisplayMember = "Id";
+            this.comboStudentId.FormattingEnabled = true;
+            this.comboStudentId.Location = new System.Drawing.Point(809, 366);
+            this.comboStudentId.Name = "comboStudentId";
+            this.comboStudentId.Size = new System.Drawing.Size(121, 21);
+            this.comboStudentId.TabIndex = 11;
+            this.comboStudentId.ValueMember = "Id";
+            this.comboStudentId.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // projectBDataSet2
+            // 
+            this.projectBDataSet2.DataSetName = "ProjectBDataSet2";
+            this.projectBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "Student";
+            this.studentBindingSource.DataSource = this.projectBDataSet2;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // StudentAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 721);
-            this.Controls.Add(this.txtStudentIdAttendance);
+            this.Controls.Add(this.comboStudentId);
             this.Controls.Add(this.labelStudentIdAttendance);
             this.Controls.Add(this.btnattendancesave);
             this.Controls.Add(this.comboStatusAttendance);
@@ -349,8 +373,10 @@
             this.UpperPanel.ResumeLayout(false);
             this.UpperPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentAttendanceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,6 +407,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn attendanceStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label labelStudentIdAttendance;
-        private System.Windows.Forms.TextBox txtStudentIdAttendance;
+        private System.Windows.Forms.ComboBox comboStudentId;
+        private ProjectBDataSet2 projectBDataSet2;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private ProjectBDataSet2TableAdapters.StudentTableAdapter studentTableAdapter;
     }
 }

@@ -21,6 +21,8 @@ namespace ProjectAssessmentDB
 
         private void StudentAttendance_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectBDataSet2.Student' table. You can move, or remove it, as needed.
+            this.studentTableAdapter.Fill(this.projectBDataSet2.Student);
             // TODO: This line of code loads data into the 'projectBDataSet7.StudentAttendance' table. You can move, or remove it, as needed.
             this.studentAttendanceTableAdapter.Fill(this.projectBDataSet7.StudentAttendance);
 
@@ -168,7 +170,7 @@ namespace ProjectAssessmentDB
         
                     string query = "Insert INTO StudentAttendance(StudentId,AttendanceId,AttendanceStatus) VALUES(@StudentId,@AttendanceId,@AttendanceStatus)";
                     SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@StudentId", txtStudentIdAttendance.Text);
+                    command.Parameters.AddWithValue("@StudentId", comboStudentId.SelectedValue);
                     command.Parameters.AddWithValue("@AttendanceId", GetAttendanceId());
                     command.Parameters.AddWithValue("@AttendanceStatus", temp);
                     command.ExecuteNonQuery();
@@ -206,6 +208,16 @@ namespace ProjectAssessmentDB
         private void comboStatusAttendance_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtStudentIdAttendance_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
